@@ -58,15 +58,19 @@ button{font:inherit;color:inherit;cursor:pointer}
 .btn-ghost{border-color:currentColor;background:transparent}
 
 /* header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--header);border-bottom:1px solid var(--line)}
+header.top{overflow-x:clip;position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--header);border-bottom:1px solid var(--line)}
 header.top .in{display:flex;align-items:center;gap:1rem;min-height:68px;flex-wrap:wrap;padding-block:.4rem}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;min-width:0;margin-right:auto}
 .brand img{width:52px;height:auto;flex:none}
 .brand b{color:var(--green);font-family:var(--font-d);font-weight:600;font-size:1.05rem;line-height:1.1}
 .brand small{display:block;font-size:.72rem;color:var(--muted);font-weight:500}
-nav.main{display:flex;gap:1.15rem;font-weight:500;font-size:.95rem}
-nav.main a{text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
-nav.main a:hover{border-bottom-color:var(--gold)}
+nav.main{position:absolute;right:0;top:100%;width:min(340px,100%);display:flex;flex-direction:column;padding:.6rem max(16px,env(safe-area-inset-right,0px)) 1.2rem 1.4rem;background:rgba(8,22,58,.72);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);color:#fff;border-bottom-left-radius:22px;box-shadow:0 24px 40px -22px rgba(8,22,58,.6);transform:translateX(105%);opacity:0;visibility:hidden;transition:transform .42s cubic-bezier(.2,.8,.2,1),opacity .3s,visibility 0s .42s;font-weight:500;font-size:1.05rem}
+nav.main.open{transform:none;opacity:1;visibility:visible;transition:transform .42s cubic-bezier(.2,.8,.2,1),opacity .3s,visibility 0s}
+nav.main a{text-decoration:none;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.16);opacity:0;transform:translateX(18px);transition:opacity .3s,transform .3s,color .15s}
+nav.main.open a{opacity:1;transform:none}
+nav.main.open a:nth-child(1){transition-delay:.08s}nav.main.open a:nth-child(2){transition-delay:.12s}nav.main.open a:nth-child(3){transition-delay:.16s}nav.main.open a:nth-child(4){transition-delay:.2s}nav.main.open a:nth-child(5){transition-delay:.24s}nav.main.open a:nth-child(6){transition-delay:.28s}nav.main.open a:nth-child(7){transition-delay:.32s}nav.main.open a:nth-child(8){transition-delay:.36s}
+nav.main a:last-child{border-bottom:0}
+nav.main a:hover{color:#9AD6FF}
 .lang{position:relative}
 .flag{display:inline-flex;align-items:center;gap:.45rem;height:38px;padding:0 .7rem 0 .6rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.85rem}
 .flag b{font-weight:600;letter-spacing:.04em}
@@ -82,13 +86,13 @@ nav.main a:hover{border-bottom-color:var(--gold)}
 .lmenu li:hover,.lmenu li:focus-visible{background:var(--sky-soft)}
 .lmenu li[aria-selected="true"]{background:var(--sky-soft)}
 header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
-.menubtn{display:none;border:2px solid var(--line);background:transparent;border-radius:999px;padding:.35rem .9rem;font-weight:600;font-size:.85rem;min-height:36px}
-@media (max-width:1270px){
-  .menubtn{display:inline-flex;align-items:center}
-  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--header);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:.4rem max(16px,env(safe-area-inset-right,0px)) 1rem max(16px,env(safe-area-inset-left,0px));box-shadow:0 18px 30px -20px var(--shadow)}
-  nav.main.open{display:flex}
-  nav.main a{padding:.85rem 0;border-bottom:1px solid var(--line)}
-}
+.menubtn{display:inline-grid;place-content:center;gap:5px;width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:50%;padding:0}
+.menubtn i{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .2s}
+.menubtn[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menubtn[aria-expanded="true"] i:nth-child(2){opacity:0}
+.menubtn[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menubtn:hover{border-color:var(--primary)}
+@media (prefers-reduced-motion: reduce){nav.main,nav.main a,.menubtn i{transition:none !important}}
 @media (max-width:520px){header .btn{display:none}.brand small{display:none}}
 
 /* hero */
@@ -414,7 +418,7 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       </ul>
     </div>
     <a class="btn btn-primary" href="#enrol" data-i18n="cta_enrol">Enrol now</a>
-    <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="mainnav" data-i18n="menu">Menu</button>
+    <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="mainnav" aria-label="Menu" data-i18n-aria="menu"><i></i><i></i><i></i></button>
   </div></div>
 </header>
 
@@ -1095,6 +1099,8 @@ footer p{color:var(--hero-muted);font-size:.92rem}
   var mb=$("#menubtn"), mn=$("#mainnav");
   mb.addEventListener("click",function(){var o=mn.classList.toggle("open");mb.setAttribute("aria-expanded",String(o));});
   $$("a",mn).forEach(function(a){a.addEventListener("click",function(){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");});});
+  document.addEventListener("click",function(e){if(mn.classList.contains("open")&&!mn.contains(e.target)&&!mb.contains(e.target)){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");}});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&mn.classList.contains("open")){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");mb.focus();}});
 
   /* media + bibliography */
   var YT_URL=""; /* put the school's YouTube channel link between the quotes */
