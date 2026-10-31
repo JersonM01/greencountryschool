@@ -10,31 +10,31 @@
 <style>
 /* Layout concept: a gate with two doors. French section and English section share one campus, shown as two arched doors, a class track that changes colour at the gate, and a visit form at the end. */
 :root{
-  --bg:#F7FCF5; --surface:#FFFFFF; --ink:#16301F; --muted:#4B6654; --line:#D8EBD3;
-  --green:#0F8040; --gold:#FFC41F;
-  --primary:#0F8040; --on-primary:#FFFFFF;
-  --hero:#0F8040; --on-hero:#FFFFFF; --hero-muted:#EAF8EE;
+  --bg:#FFFFFF; --surface:#F4FAFF; --ink:#0B1D45; --muted:#4A5E80; --line:#CFE5F7;
+  --green:#0F8040; --gold:#5DB8F2; --sky:#5DB8F2; --sky-soft:#E4F3FD; --night:#0B1D45; --yt:#FF0000;
+  --primary:#0B1D45; --on-primary:#FFFFFF;
+  --hero:#0B1D45; --on-hero:#FFFFFF; --hero-muted:#BFD9F2;
   --fr:#D7263D; --en:#1D5FD1; --fr-soft:#FFEDEF; --en-soft:#E8F0FF;
-  --header:#FFFFFF; --focus:#1D5FD1; --shadow:rgba(15,128,64,.2);
+  --header:#FFFFFF; --focus:#1D5FD1; --shadow:rgba(11,29,69,.18);
   --font-d:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
   --font-b:'Figtree',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#09190F; --surface:#102518; --ink:#E7F2E9; --muted:#9FB8A7; --line:#22402C;
-    --primary:#F2B01E; --on-primary:#1A1300;
-    --hero:#05301B; --hero-muted:#A9D2B5;
-    --fr:#FF8089; --en:#93BDFF; --fr-soft:#35171B; --en-soft:#14263F;
-    --header:#0C2014; --focus:#F2B01E; --shadow:rgba(0,0,0,.5);
+    --bg:#071230; --surface:#0C1B42; --ink:#EAF3FF; --muted:#9DB4D6; --line:#1D3568;
+    --primary:#5DB8F2; --on-primary:#071230;
+    --hero:#040C22; --hero-muted:#A9C6EA;
+    --fr:#FF8089; --en:#93BDFF; --fr-soft:#35171B; --en-soft:#14263F; --sky-soft:#10265A; --night:#EAF3FF;
+    --header:#081638; --focus:#5DB8F2; --shadow:rgba(0,0,0,.5);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#09190F; --surface:#102518; --ink:#E7F2E9; --muted:#9FB8A7; --line:#22402C;
-  --primary:#F2B01E; --on-primary:#1A1300;
-  --hero:#05301B; --hero-muted:#A9D2B5;
-  --fr:#FF8089; --en:#93BDFF; --fr-soft:#35171B; --en-soft:#14263F;
-  --header:#0C2014; --focus:#F2B01E; --shadow:rgba(0,0,0,.5);
+  --bg:#071230; --surface:#0C1B42; --ink:#EAF3FF; --muted:#9DB4D6; --line:#1D3568;
+  --primary:#5DB8F2; --on-primary:#071230;
+  --hero:#040C22; --hero-muted:#A9C6EA;
+  --fr:#FF8089; --en:#93BDFF; --fr-soft:#35171B; --en-soft:#14263F; --sky-soft:#10265A; --night:#EAF3FF;
+  --header:#081638; --focus:#5DB8F2; --shadow:rgba(0,0,0,.5);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -62,15 +62,25 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;backgroun
 header.top .in{display:flex;align-items:center;gap:1rem;min-height:68px;flex-wrap:wrap;padding-block:.4rem}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;min-width:0;margin-right:auto}
 .brand img{width:52px;height:auto;flex:none}
-.brand b{font-family:var(--font-d);font-weight:600;font-size:1.05rem;line-height:1.1}
+.brand b{color:var(--green);font-family:var(--font-d);font-weight:600;font-size:1.05rem;line-height:1.1}
 .brand small{display:block;font-size:.72rem;color:var(--muted);font-weight:500}
 nav.main{display:flex;gap:1.15rem;font-weight:500;font-size:.95rem}
 nav.main a{text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
 nav.main a:hover{border-bottom-color:var(--gold)}
-.flag{display:inline-grid;place-items:center;width:46px;height:38px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:0}
-.flag:hover{border-color:var(--primary)}
-.flag svg{width:26px;height:18px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.18);display:none}
-.flag[data-l="en"] .fl-en,.flag[data-l="fr"] .fl-fr{display:block}
+.lang{position:relative}
+.flag{display:inline-flex;align-items:center;gap:.45rem;height:38px;padding:0 .7rem 0 .6rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.85rem}
+.flag b{font-weight:600;letter-spacing:.04em}
+.flag:hover,.flag[aria-expanded="true"]{border-color:var(--primary)}
+.fl{display:inline-block;line-height:0}
+.fl svg{width:26px;height:18px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.18);display:block}
+.flag .fl{display:none}
+.flag[data-l="en"] .fl-en,.flag[data-l="fr"] .fl-fr{display:inline-block}
+.flag .caret{width:10px;height:6px;transition:transform .2s}
+.flag[aria-expanded="true"] .caret{transform:rotate(180deg)}
+.lmenu{position:absolute;right:0;top:calc(100% + 6px);z-index:60;list-style:none;margin:0;padding:.3rem;min-width:7.5rem;background:var(--header);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 30px -12px var(--shadow)}
+.lmenu li{display:flex;align-items:center;gap:.55rem;padding:.5rem .7rem;border-radius:10px;font-weight:600;font-size:.88rem;letter-spacing:.04em;cursor:pointer}
+.lmenu li:hover,.lmenu li:focus-visible{background:var(--sky-soft)}
+.lmenu li[aria-selected="true"]{background:var(--sky-soft)}
 header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
 .menubtn{display:none;border:2px solid var(--line);background:transparent;border-radius:999px;padding:.35rem .9rem;font-weight:600;font-size:.85rem;min-height:36px}
 @media (max-width:1270px){
@@ -88,40 +98,40 @@ header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
 .slide img{width:100%;height:100%;object-fit:cover}
 .slide.on{transform:none;z-index:3;transition:transform .95s cubic-bezier(.7,0,.25,1)}
 .slide.prev{transform:none;z-index:2}
-.stag{position:absolute;top:1rem;right:max(16px,env(safe-area-inset-right,0px));background:rgba(255,255,255,.92);color:#16301F;font-size:.78rem;font-weight:500;padding:.25rem .75rem;border-radius:999px}
-.hctl{position:absolute;right:max(16px,calc((100% - 1180px)/2));bottom:clamp(6.6rem,11.5vw,9.2rem);z-index:6;display:flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.94);color:#16301F;padding:.3rem .55rem;border-radius:999px;box-shadow:0 8px 22px -10px rgba(0,0,0,.4)}
-.cbtn{width:34px;height:34px;border-radius:50%;border:0;background:transparent;color:#16301F;display:grid;place-items:center;padding:0}
-.cbtn:hover{background:#E6F4E8}
+.stag{position:absolute;top:1rem;right:max(16px,env(safe-area-inset-right,0px));background:rgba(255,255,255,.92);color:#0B1D45;font-size:.78rem;font-weight:500;padding:.25rem .75rem;border-radius:999px}
+.hctl{position:absolute;right:max(16px,calc((100% - 1180px)/2));bottom:clamp(6.6rem,11.5vw,9.2rem);z-index:6;display:flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.94);color:#0B1D45;padding:.3rem .55rem;border-radius:999px;box-shadow:0 8px 22px -10px rgba(0,0,0,.4)}
+.cbtn{width:34px;height:34px;border-radius:50%;border:0;background:transparent;color:#0B1D45;display:grid;place-items:center;padding:0}
+.cbtn:hover{background:#E4F3FD}
 .cbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .cbtn .ic-play{display:none;fill:currentColor;stroke:none}
 .cbtn.paused .ic-play{display:block}.cbtn.paused .ic-pause{display:none}
 .dots{display:flex;gap:.5rem;align-items:center;padding:0 .3rem}
-.dot{position:relative;width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#BFD8C6;transition:width .25s,background .25s}
+.dot{position:relative;width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#BFD9F2;transition:width .25s,background .25s}
 .dot::before{content:"";position:absolute;inset:-9px -4px}
-.dot[aria-current="true"]{width:26px;border-radius:6px;background:#0F8040}
+.dot[aria-current="true"]{width:26px;border-radius:6px;background:#0B1D45}
 /* glass layer: dark tint plus blur, both fading out towards the photo */
-.hglass{position:absolute;z-index:4;left:0;top:0;bottom:0;width:min(68%,940px);pointer-events:none;background:linear-gradient(90deg,rgba(6,22,14,.74) 0%,rgba(6,22,14,.6) 48%,rgba(6,22,14,.26) 80%,rgba(6,22,14,0) 100%);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 50%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 50%,transparent 100%)}
+.hglass{position:absolute;z-index:4;left:0;top:0;bottom:0;width:min(68%,940px);pointer-events:none;background:linear-gradient(90deg,rgba(8,22,58,.74) 0%,rgba(8,22,58,.6) 48%,rgba(8,22,58,.26) 80%,rgba(8,22,58,0) 100%);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 50%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 50%,transparent 100%)}
 .hwrap{position:relative;z-index:5;width:100%;pointer-events:none}
 .hwrap .htext{pointer-events:auto}
 .hero .in{display:block}
 .htext{max-width:35rem;color:#fff}
-.hero .eyebrow{color:#FFD45A}
+.hero .eyebrow{color:#9AD6FF}
 .hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:500;margin-top:.7rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.35)}
-.hero h1 mark{background:none;display:inline-block;background-image:linear-gradient(#FFC41F,#FFC41F);background-repeat:no-repeat;background-position:0 94%;background-size:100% .11em;color:inherit}
+.hero h1 mark{background:none;display:inline-block;background-image:linear-gradient(#5DB8F2,#5DB8F2);background-repeat:no-repeat;background-position:0 94%;background-size:100% .11em;color:inherit}
 .hero .lead{margin-top:1.1rem;font-size:1.06rem;max-width:31rem;color:rgba(255,255,255,.94);text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .hero .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
-.hero .btn-primary{background:#FFC41F;color:#1A1300}
+.hero .btn-primary{background:#fff;color:#0B1D45}
 .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.75)}
 .hero .chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.42);color:#fff}
 .hero .chip i{box-shadow:0 0 0 2px #fff}
-.hero :focus-visible{outline-color:#FFD45A}
+.hero :focus-visible{outline-color:#9AD6FF}
 @media (max-width:760px){
   .hero{min-height:clamp(600px,84vh,720px);padding:0 0 2.2rem}
-  .hglass{width:100%;top:auto;height:80%;background:linear-gradient(0deg,rgba(6,22,14,.84) 0%,rgba(6,22,14,.68) 56%,rgba(6,22,14,0) 100%);-webkit-mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%);mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%)}
+  .hglass{width:100%;top:auto;height:80%;background:linear-gradient(0deg,rgba(8,22,58,.84) 0%,rgba(8,22,58,.68) 56%,rgba(8,22,58,0) 100%);-webkit-mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%);mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%)}
   .hctl{top:.9rem;bottom:auto;right:max(16px,env(safe-area-inset-right,0px))}
   .stag{right:auto;left:max(16px,env(safe-area-inset-left,0px))}
   .hero .chips{display:none}
-  .slides{background:#0A1A10}
+  .slides{background:#0B1D45}
   .slide img{height:66%}
   .slide:nth-child(1) img{object-position:24% 50% !important}
   .slide:nth-child(2) img{object-position:64% 40% !important}
@@ -135,7 +145,7 @@ header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
 .chip i{width:.8rem;height:.8rem;border-radius:50%;flex:none}
 .chip b{font-weight:600}
 .arch{position:relative;max-width:430px;width:100%;justify-self:center;margin-bottom:1.2rem}
-.arch .pic{aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;border:6px solid var(--gold);background:#073;}
+.arch .pic{aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;border:6px solid var(--gold);background:#0B1D45;}
 .arch .pic img{width:100%;height:100%;object-fit:cover;object-position:32% 50%}
 .band img,.arch .seal{height:auto}
 .band img{height:100%}
@@ -233,7 +243,7 @@ section.block{padding-block:clamp(3.5rem,8vw,6.5rem)}
 .stop .nm{font-size:.82rem;font-weight:500;color:var(--muted)}
 .stop[aria-pressed="true"] .nm{color:var(--ink)}
 .stop:first-child::before{left:50%}.stop:last-child::before{right:50%}
-.switchtag{position:absolute;top:0;left:calc(100% * 3 / 7);transform:translateX(-50%);background:var(--gold);color:#1A1300;font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.25rem .7rem;border-radius:999px;white-space:nowrap}
+.switchtag{position:absolute;top:0;left:calc(100% * 3 / 7);transform:translateX(-50%);background:var(--gold);color:#0B1D45;font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.25rem .7rem;border-radius:999px;white-space:nowrap}
 .switchtag::after{content:"";position:absolute;left:50%;top:100%;border:6px solid transparent;border-top-color:var(--gold);transform:translateX(-50%)}
 .panel{margin-top:2.4rem;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1.5rem;align-items:center;padding:clamp(1.2rem,3vw,2rem);border:2px solid var(--c);background:var(--soft)}
 .panel.fr{--c:var(--fr);--soft:var(--fr-soft)}.panel.en{--c:var(--en);--soft:var(--en-soft)}
@@ -256,7 +266,7 @@ section.block{padding-block:clamp(3.5rem,8vw,6.5rem)}
 @media (max-width:700px){.gal figure{grid-column:1 / -1 !important}.gal img{height:auto;aspect-ratio:16/10}}
 #lb{position:fixed;inset:0;z-index:60;background:rgba(5,15,9,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));gap:.8rem;grid-template-rows:1fr auto}
 #lb img{max-width:100%;max-height:100%;margin:auto;object-fit:contain}
-#lb p{color:#E7F2E9;text-align:center}
+#lb p{color:#EAF3FF;text-align:center}
 #lb .x{position:absolute;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));width:48px;height:48px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;font-size:1.6rem;line-height:1}
 
 /* visit */
@@ -285,18 +295,18 @@ input:focus,select:focus{border-color:var(--primary);outline:none}
 @media (max-width:820px){.visit .in{grid-template-columns:minmax(0,1fr)}.row2{grid-template-columns:minmax(0,1fr)}}
 
 /* kids corner, enrolment, careers */
-.kids{background:#FFC41F;color:#1A1300;padding-block:clamp(2.5rem,6vw,4.2rem)}
+.kids{background:#CDE9FB;color:#0B1D45;padding-block:clamp(2.5rem,6vw,4.2rem)}
 .kids .in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(1.5rem,5vw,3.5rem);align-items:center}
-.kids .eyebrow{color:#5B4200}
+.kids .eyebrow{color:#27508A}
 .kids h2{font-size:clamp(2.2rem,5.4vw,3.8rem);font-weight:500;margin-top:.5rem}
 .kids p.lead{margin-top:.8rem;font-size:1.15rem;max-width:30rem}
-.kids :focus-visible{outline-color:#0F8040}
-.playbtn{margin-top:1.5rem;background:#0F8040;color:#fff;border:0;border-radius:999px;min-height:58px;padding:0 2.2rem;font-weight:600;font-size:1.2rem;font-family:var(--font-b);transition:transform .15s,box-shadow .15s}
-.playbtn:hover{transform:translateY(-2px) rotate(-1deg);box-shadow:0 10px 22px rgba(10,68,38,.35)}
-.soon{margin-top:1rem;font-weight:600;background:#fff;color:#1A1300;display:inline-block;padding:.6rem 1rem}
+.kids :focus-visible{outline-color:#0B1D45}
+.playbtn{margin-top:1.5rem;background:#0B1D45;color:#fff;border:0;border-radius:999px;min-height:58px;padding:0 2.2rem;font-weight:600;font-size:1.2rem;font-family:var(--font-b);transition:transform .15s,box-shadow .15s}
+.playbtn:hover{transform:translateY(-2px) rotate(-1deg);box-shadow:0 10px 22px rgba(11,29,69,.35)}
+.soon{margin-top:1rem;font-weight:600;background:#fff;color:#0B1D45;display:inline-block;padding:.6rem 1rem}
 .wgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;max-width:340px;width:100%;justify-self:center}
-.wgrid span{aspect-ratio:1;display:grid;place-items:center;background:#fff;color:#0F8040;font-family:var(--font-d);font-weight:600;font-size:clamp(.95rem,3.4vw,1.35rem)}
-.wgrid span.hit{background:#0F8040;color:#fff}
+.wgrid span{aspect-ratio:1;display:grid;place-items:center;background:#fff;color:#0B1D45;font-family:var(--font-d);font-weight:600;font-size:clamp(.95rem,3.4vw,1.35rem)}
+.wgrid span.hit{background:#0B1D45;color:#fff}
 @media (max-width:700px){.kids .in{grid-template-columns:minmax(0,1fr)}}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
 @media (max-width:820px){.two{grid-template-columns:minmax(0,1fr)}}
@@ -326,16 +336,20 @@ input[aria-invalid="true"]{border-color:var(--fr)}
 .dalf span{max-width:19rem}
 .dalf img{width:clamp(150px,24vw,220px);height:auto;flex:none;background:#fff}
 .dalf span{color:var(--muted);font-size:.93rem}
-.media{background:var(--surface);border-block:1px solid var(--line)}
-.ytbtn{background:var(--ink);color:var(--bg);gap:.6rem}
+.media{background:var(--yt);color:#fff;border:0}
+.media .eyebrow,.media .head p{color:#fff}
+.media .fine{color:#FFE3E3}
+.media :focus-visible{outline-color:#fff}
+.ytbtn{background:#fff;color:#CC0000;gap:.6rem}
 .ytbtn svg{width:20px;height:20px;fill:currentColor}
 .btn.off{opacity:.55;pointer-events:none}
-.screen{aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#E3F6E8 0%,#FFF1BF 100%);border:1px solid var(--line);overflow:hidden;box-shadow:0 28px 50px -30px var(--shadow)}
-.screen .play{width:clamp(64px,10vw,92px);aspect-ratio:1;border-radius:50%;background:#0F8040;display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(15,128,64,.6)}
+.ytbtn.off{opacity:.9}
+.screen{aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#1A1A1A 0%,#3A0A0A 100%);border:0;overflow:hidden;box-shadow:0 28px 50px -30px var(--shadow)}
+.screen .play{width:clamp(64px,10vw,92px);aspect-ratio:1;border-radius:50%;background:#FF0000;display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(255,0,0,.7)}
 .screen .play svg{width:38%;fill:#fff;margin-left:6%}
-.screen .bar{position:absolute;left:5%;right:5%;bottom:9%;height:6px;background:rgba(15,128,64,.2)}
-.screen .bar i{display:block;width:34%;height:100%;background:#0F8040}
-.screen figcaption{position:absolute;left:5%;top:7%;font-size:.85rem;color:#16301F;background:rgba(255,255,255,.88);padding:.25rem .7rem;border-radius:999px}
+.screen .bar{position:absolute;left:5%;right:5%;bottom:9%;height:6px;background:rgba(255,255,255,.25)}
+.screen .bar i{display:block;width:34%;height:100%;background:#FF0000}
+.screen figcaption{position:absolute;left:5%;top:7%;font-size:.85rem;color:#0B1D45;background:rgba(255,255,255,.88);padding:.25rem .7rem;border-radius:999px}
 .themes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,2vw,1.4rem);margin-bottom:2.2rem}
 .theme{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);padding:1.1rem 1.2rem;display:grid;gap:.35rem;justify-items:start}
 .theme svg{width:32px;height:32px;fill:none;stroke:var(--c);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -385,10 +399,16 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       <a href="#biblio" data-i18n="nav_biblio">Bibliography</a>
       <a href="#visit" data-i18n="nav_visit">Visit us</a>
     </nav>
-    <button class="flag" id="langbtn" type="button" data-l="en" aria-label="Language: English. Switch to French" title="English / Français">
-      <svg class="fl-en" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect x="12.5" width="5" height="20" fill="#CE1124"/><rect y="7.5" width="30" height="5" fill="#CE1124"/></svg>
-      <svg class="fl-fr" viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#0055A4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg>
-    </button>
+    <div class="lang" id="lang">
+      <button class="flag" id="langbtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langmenu" aria-label="Language" title="Language">
+        <span class="fl fl-en"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="ukc"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="ukt"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#ukc)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#ukt)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span><span class="fl fl-fr"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#0055A4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg></span><b id="langcode">ENG</b>
+        <svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="lmenu" id="langmenu" role="listbox" aria-label="Language" hidden>
+        <li role="option" data-set="en" tabindex="0"><span class="fl"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="ukc2"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="ukt2"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#ukc2)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#ukt2)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span>ENG</li>
+        <li role="option" data-set="fr" tabindex="0"><span class="fl"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#0055A4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg></span>FR</li>
+      </ul>
+    </div>
     <a class="btn btn-primary" href="#enrol" data-i18n="cta_enrol">Enrol now</a>
     <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="mainnav" data-i18n="menu">Menu</button>
   </div></div>
@@ -613,7 +633,7 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       <div class="theme" style="--c:var(--en)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13.5"/></svg><b data-i18n="th1">Reading</b><span data-i18n="th1d">Books to read at home</span></div>
       <div class="theme" style="--c:var(--fr)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg><b data-i18n="th2">Writing</b><span data-i18n="th2d">Writing practice and exercises</span></div>
       <div class="theme" style="--c:var(--primary)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg><b data-i18n="th3">Science</b><span data-i18n="th3d">Science books and activities</span></div>
-      <div class="theme" style="--c:#C98A00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/></svg><b data-i18n="th4">Pupils' exercises</b><span data-i18n="th4d">Exercise sheets by class</span></div>
+      <div class="theme" style="--c:#5DB8F2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/></svg><b data-i18n="th4">Pupils' exercises</b><span data-i18n="th4d">Exercise sheets by class</span></div>
     </div>
     <div class="filters" role="group" aria-label="Class"><span class="lbl" data-i18n="f_class_h">Class</span><span class="fgroup" id="bf-class"></span></div>
     <div class="filters" role="group" aria-label="Type"><span class="lbl" data-i18n="f_cat_h">Type</span><span class="fgroup" id="bf-cat"></span></div>
@@ -788,7 +808,7 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       hint_p2:"The English section begins at Primary 3.", hint_p3:"Primary 3 is the first class of the English section.",
       ask:"Ask about this class",
       msg_hello:"Hello Green Country School, I would like to plan a visit.", msg_name:"Name", msg_class:"Child's class", msg_day:"Preferred day", msg_phone:"Phone",
-      nav_values:"Values", s_campus:"Our campus", s_illus:"Illustrative photo", alt_s1:"The classroom block and courtyard of Green Country School in Gatenga", alt_s2:"Four girls looking at a globe in a library", alt_s3:"A smiling boy at a computer in a classroom", prev_ph:"Previous photo", next_ph:"Next photo", pause_ph:"Pause slideshow", play_ph:"Play slideshow", lang_label:"Language: English. Switch to French",
+      nav_values:"Values", s_campus:"Our campus", s_illus:"Illustrative photo", alt_s1:"The classroom block and courtyard of Green Country School in Gatenga", alt_s2:"Four girls looking at a globe in a library", alt_s3:"A smiling boy at a computer in a classroom", prev_ph:"Previous photo", next_ph:"Next photo", pause_ph:"Pause slideshow", play_ph:"Play slideshow", lang_label:"Language",
       nav_media:"Media", nav_biblio:"Bibliography",
       wf_eyebrow:"Why we teach French", wf_h2:"French as a foreign language, to an official standard",
       wf_p:"At Green Country School, French is taught as a foreign language (FLE). Our main value is a recognised level of French, measured by the official DELF and DALF diplomas.",
@@ -851,7 +871,7 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       hint_p2:"La section anglaise commence en Primary 3 (3ème Primaire).", hint_p3:"Primary 3 est la première classe de la section anglaise.",
       ask:"Poser une question sur cette classe",
       msg_hello:"Bonjour Green Country School, je souhaite planifier une visite.", msg_name:"Nom", msg_class:"Classe de l'enfant", msg_day:"Jour souhaité", msg_phone:"Téléphone",
-      nav_values:"Valeurs", s_campus:"Notre campus", s_illus:"Photo d'illustration", alt_s1:"Le bâtiment de classes et la cour de Green Country School à Gatenga", alt_s2:"Quatre filles regardant un globe dans une bibliothèque", alt_s3:"Un garçon souriant devant un ordinateur dans une salle de classe", prev_ph:"Photo précédente", next_ph:"Photo suivante", pause_ph:"Mettre le diaporama en pause", play_ph:"Reprendre le diaporama", lang_label:"Langue : français. Passer à l\'anglais",
+      nav_values:"Valeurs", s_campus:"Notre campus", s_illus:"Photo d'illustration", alt_s1:"Le bâtiment de classes et la cour de Green Country School à Gatenga", alt_s2:"Quatre filles regardant un globe dans une bibliothèque", alt_s3:"Un garçon souriant devant un ordinateur dans une salle de classe", prev_ph:"Photo précédente", next_ph:"Photo suivante", pause_ph:"Mettre le diaporama en pause", play_ph:"Reprendre le diaporama", lang_label:"Langue",
       nav_media:"Médias", nav_biblio:"Bibliographie",
       wf_eyebrow:"Pourquoi nous enseignons le français", wf_h2:"Le français langue étrangère, selon un standard officiel",
       wf_p:"À Green Country School, le français est enseigné comme langue étrangère (FLE). Notre valeur principale est un niveau de français reconnu, mesuré par les diplômes officiels DELF et DALF.",
@@ -940,7 +960,7 @@ footer p{color:var(--hero-muted);font-size:.92rem}
     $$("[data-i18n]").forEach(function(el){var v=t(el.getAttribute("data-i18n")); if(v!=null) el.textContent=v;});
     $$("[data-i18n-html]").forEach(function(el){var v=t(el.getAttribute("data-i18n-html")); if(v!=null) el.innerHTML=v;});
     $$("[data-i18n-ph]").forEach(function(el){el.placeholder=t(el.getAttribute("data-i18n-ph"));});
-    (function(b){b.setAttribute("data-l",lang);b.setAttribute("aria-label",t("lang_label"));b.title=t("lang_label");})($("#langbtn"));
+    (function(b){b.setAttribute("data-l",lang);b.setAttribute("aria-label",t("lang_label"));b.title=t("lang_label");$("#langcode").textContent=(lang==="en")?"ENG":"FR";$("#langmenu").setAttribute("aria-label",t("lang_label"));$$("#langmenu li").forEach(function(li){li.setAttribute("aria-selected",li.getAttribute("data-set")===lang?"true":"false");});})($("#langbtn"));
     $$("[data-i18n-aria]").forEach(function(el){el.setAttribute("aria-label",t(el.getAttribute("data-i18n-aria")));});
     $$("[data-lb]").forEach(function(b){$("img",b).alt=t(b.getAttribute("data-cap"));});
     $$("[data-alt]").forEach(function(im){im.alt=t(im.getAttribute("data-alt"));});
@@ -949,9 +969,18 @@ footer p{color:var(--hero-muted);font-size:.92rem}
     if(!$("#eout").hidden) buildEnrol();
     if(!$("#cout").hidden) buildCareer();
   }
-  $("#langbtn").addEventListener("click",function(){
-    lang=(lang==="en")?"fr":"en"; try{localStorage.setItem("gcs-lang",lang);}catch(e){} applyLang();
-  });
+  (function(){
+    var btn=$("#langbtn"), menu=$("#langmenu");
+    function open(o){menu.hidden=!o;btn.setAttribute("aria-expanded",o?"true":"false");}
+    function pick(l){lang=l; try{localStorage.setItem("gcs-lang",lang);}catch(e){} applyLang(); open(false); btn.focus();}
+    btn.addEventListener("click",function(e){e.stopPropagation();open(menu.hidden);});
+    $$("#langmenu li").forEach(function(li){
+      li.addEventListener("click",function(){pick(li.getAttribute("data-set"));});
+      li.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(li.getAttribute("data-set"));}});
+    });
+    document.addEventListener("click",function(e){if(!menu.hidden&&!$("#lang").contains(e.target))open(false);});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!menu.hidden){open(false);btn.focus();}});
+  })();
 
   /* copy helper */
   function copyText(text,node,btn,done){
