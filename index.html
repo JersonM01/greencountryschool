@@ -92,6 +92,12 @@ header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
 .menubtn[aria-expanded="true"] i:nth-child(2){opacity:0}
 .menubtn[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .menubtn:hover{border-color:var(--primary)}
+header .menubtn{display:none}
+body.past header .menubtn{display:inline-grid}
+.hburger{position:absolute;z-index:12;top:.9rem;right:max(16px,env(safe-area-inset-right,0px));border-color:rgba(255,255,255,.75);background:rgba(8,22,58,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hburger i{background:#fff}
+.hburger:hover{border-color:#fff;background:rgba(8,22,58,.45)}
+nav.main.heronav{z-index:11;top:4.4rem;border-radius:22px 0 0 22px;box-shadow:none;background:rgba(8,22,58,.66)}
 @media (prefers-reduced-motion: reduce){nav.main,nav.main a,.menubtn i{transition:none !important}}
 @media (max-width:520px){header .btn{display:none}.brand small{display:none}}
 
@@ -102,7 +108,7 @@ header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
 .slide img{width:100%;height:100%;object-fit:cover}
 .slide.on{transform:none;z-index:3;transition:transform .95s cubic-bezier(.7,0,.25,1)}
 .slide.prev{transform:none;z-index:2}
-.stag{position:absolute;top:1rem;right:max(16px,env(safe-area-inset-right,0px));background:rgba(255,255,255,.92);color:#0B1D45;font-size:.78rem;font-weight:500;padding:.25rem .75rem;border-radius:999px}
+.stag{position:absolute;top:1rem;left:max(16px,env(safe-area-inset-left,0px));background:rgba(255,255,255,.92);color:#0B1D45;font-size:.78rem;font-weight:500;padding:.25rem .75rem;border-radius:999px}
 .hctl{position:absolute;right:max(16px,calc((100% - 1180px)/2));bottom:clamp(6.6rem,11.5vw,9.2rem);z-index:6;display:flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.94);color:#0B1D45;padding:.3rem .55rem;border-radius:999px;box-shadow:0 8px 22px -10px rgba(0,0,0,.4)}
 .cbtn{width:34px;height:34px;border-radius:50%;border:0;background:transparent;color:#0B1D45;display:grid;place-items:center;padding:0}
 .cbtn:hover{background:#E4F3FD}
@@ -132,7 +138,7 @@ header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
 @media (max-width:760px){
   .hero{min-height:clamp(600px,84vh,720px);padding:0 0 2.2rem}
   .hglass{width:100%;top:auto;height:80%;background:linear-gradient(0deg,rgba(8,22,58,.84) 0%,rgba(8,22,58,.68) 56%,rgba(8,22,58,0) 100%);-webkit-mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%);mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%)}
-  .hctl{top:.9rem;bottom:auto;right:max(16px,env(safe-area-inset-right,0px))}
+  .hctl{top:4.4rem;bottom:auto;right:max(16px,env(safe-area-inset-right,0px))}
   .stag{right:auto;left:max(16px,env(safe-area-inset-left,0px))}
   .hero .chips{display:none}
   .slides{background:#0B1D45}
@@ -397,7 +403,7 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       <img src="img/emblem.png" alt="Green Country School emblem" width="52" height="48">
       <span><b>Green Country School Ltd.</b><small data-i18n="brand_sub">Nursery &amp; Primary · Gatenga</small></span>
     </a>
-    <nav class="main" id="mainnav" aria-label="Main">
+    <nav class="main" id="mainnav2" aria-label="Main">
       <a href="#programmes" data-i18n="nav_prog">Programmes</a>
       <a href="#values" data-i18n="nav_values">Values</a>
       <a href="#classes" data-i18n="nav_class">Classes</a>
@@ -418,12 +424,23 @@ footer p{color:var(--hero-muted);font-size:.92rem}
       </ul>
     </div>
     <a class="btn btn-primary" href="#enrol" data-i18n="cta_enrol">Enrol now</a>
-    <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="mainnav" aria-label="Menu" data-i18n-aria="menu"><i></i><i></i><i></i></button>
+    <button class="menubtn" type="button" id="menubtn2" aria-expanded="false" aria-controls="mainnav2" aria-label="Menu" data-i18n-aria="menu"><i></i><i></i><i></i></button>
   </div></div>
 </header>
 
 <main id="top">
 <section class="hero" aria-roledescription="carousel" aria-label="School photos">
+  <button class="menubtn hburger" type="button" id="menubtn" aria-expanded="false" aria-controls="mainnav" aria-label="Menu" data-i18n-aria="menu"><i></i><i></i><i></i></button>
+  <nav class="main heronav" id="mainnav" aria-label="Main">
+      <a href="#programmes" data-i18n="nav_prog">Programmes</a>
+      <a href="#values" data-i18n="nav_values">Values</a>
+      <a href="#classes" data-i18n="nav_class">Classes</a>
+      <a href="#enrol" data-i18n="nav_enrol">Enrol</a>
+      <a href="#careers" data-i18n="nav_careers">Careers</a>
+      <a href="#media" data-i18n="nav_media">Media</a>
+      <a href="#biblio" data-i18n="nav_biblio">Bibliography</a>
+      <a href="#visit" data-i18n="nav_visit">Visit us</a>
+    </nav>
   <div class="slides" id="slides">
     <figure class="slide on" role="group" aria-roledescription="slide">
       <img src="img/hero-campus.jpg" alt="" data-alt="alt_s1" width="2000" height="892" fetchpriority="high" style="object-position:50% 55%">
@@ -1096,11 +1113,18 @@ footer p{color:var(--hero-muted);font-size:.92rem}
   })();
 
   /* menu */
-  var mb=$("#menubtn"), mn=$("#mainnav");
-  mb.addEventListener("click",function(){var o=mn.classList.toggle("open");mb.setAttribute("aria-expanded",String(o));});
-  $$("a",mn).forEach(function(a){a.addEventListener("click",function(){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");});});
-  document.addEventListener("click",function(e){if(mn.classList.contains("open")&&!mn.contains(e.target)&&!mb.contains(e.target)){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");}});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&mn.classList.contains("open")){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");mb.focus();}});
+  function setupMenu(mb,mn){
+    function close(){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");}
+    mb.addEventListener("click",function(e){e.stopPropagation();var o=!mn.classList.contains("open");$$(".main.open").forEach(function(n){n.classList.remove("open");});$$(".menubtn").forEach(function(x){x.setAttribute("aria-expanded","false");});if(o){mn.classList.add("open");mb.setAttribute("aria-expanded","true");}});
+    $$("a",mn).forEach(function(a){a.addEventListener("click",close);});
+    document.addEventListener("click",function(e){if(mn.classList.contains("open")&&!mn.contains(e.target)&&!mb.contains(e.target))close();});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"&&mn.classList.contains("open")){close();mb.focus();}});
+    return close;
+  }
+  var closeHero=setupMenu($("#menubtn"),$("#mainnav")), closeHdr=setupMenu($("#menubtn2"),$("#mainnav2"));
+  var heroEl=$(".hero");
+  function checkPast(){var past=heroEl.getBoundingClientRect().bottom<70;document.body.classList.toggle("past",past);if(past)closeHero();else closeHdr();}
+  window.addEventListener("scroll",checkPast,{passive:true}); window.addEventListener("resize",checkPast); checkPast();
 
   /* media + bibliography */
   var YT_URL=""; /* put the school's YouTube channel link between the quotes */
