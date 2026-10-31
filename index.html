@@ -1,0 +1,1132 @@
+<title>Green Country School</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Green Country School Ltd. is a nursery and primary school in Gatenga, Kicukiro, Kigali with a French section (Maternelle to 2ème Primaire) and an English section (Primary 3 to Primary 6).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Figtree:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"School","name":"Green Country School Ltd.","slogan":"We Deliver the difference","description":"Nursery and primary school in Gatenga, Kigali with a French section and an English section.","telephone":["+250788502206","+250788468511"],"address":{"@type":"PostalAddress","postOfficeBoxNumber":"4952","addressLocality":"Gatenga, Kicukiro, Kigali","addressCountry":"RW"},"geo":{"@type":"GeoCoordinates","latitude":-1.9785354,"longitude":30.0916312}}
+</script>
+<style>
+/* Layout concept: a gate with two doors. French section and English section share one campus, shown as two arched doors, a class track that changes colour at the gate, and a visit form at the end. */
+:root{
+  --bg:#F7FCF5; --surface:#FFFFFF; --ink:#16301F; --muted:#4B6654; --line:#D8EBD3;
+  --green:#0F8040; --gold:#FFC41F;
+  --primary:#0F8040; --on-primary:#FFFFFF;
+  --hero:#0F8040; --on-hero:#FFFFFF; --hero-muted:#EAF8EE;
+  --fr:#D7263D; --en:#1D5FD1; --fr-soft:#FFEDEF; --en-soft:#E8F0FF;
+  --header:#FFFFFF; --focus:#1D5FD1; --shadow:rgba(15,128,64,.2);
+  --font-d:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
+  --font-b:'Figtree',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#09190F; --surface:#102518; --ink:#E7F2E9; --muted:#9FB8A7; --line:#22402C;
+    --primary:#F2B01E; --on-primary:#1A1300;
+    --hero:#05301B; --hero-muted:#A9D2B5;
+    --fr:#FF8089; --en:#93BDFF; --fr-soft:#35171B; --en-soft:#14263F;
+    --header:#0C2014; --focus:#F2B01E; --shadow:rgba(0,0,0,.5);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#09190F; --surface:#102518; --ink:#E7F2E9; --muted:#9FB8A7; --line:#22402C;
+  --primary:#F2B01E; --on-primary:#1A1300;
+  --hero:#05301B; --hero-muted:#A9D2B5;
+  --fr:#FF8089; --en:#93BDFF; --fr-soft:#35171B; --en-soft:#14263F;
+  --header:#0C2014; --focus:#F2B01E; --shadow:rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:17px;line-height:1.6;margin:0;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--header);z-index:30}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:600;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+b,strong{font-weight:600}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.in{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.4rem;border-radius:999px;border:2px solid transparent;font-weight:600;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px var(--shadow)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-ghost{border-color:currentColor;background:transparent}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--header);border-bottom:1px solid var(--line)}
+header.top .in{display:flex;align-items:center;gap:1rem;min-height:68px;flex-wrap:wrap;padding-block:.4rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;min-width:0;margin-right:auto}
+.brand img{width:52px;height:auto;flex:none}
+.brand b{font-family:var(--font-d);font-weight:600;font-size:1.05rem;line-height:1.1}
+.brand small{display:block;font-size:.72rem;color:var(--muted);font-weight:500}
+nav.main{display:flex;gap:1.15rem;font-weight:500;font-size:.95rem}
+nav.main a{text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-bottom-color:var(--gold)}
+.flag{display:inline-grid;place-items:center;width:46px;height:38px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:0}
+.flag:hover{border-color:var(--primary)}
+.flag svg{width:26px;height:18px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.18);display:none}
+.flag[data-l="en"] .fl-en,.flag[data-l="fr"] .fl-fr{display:block}
+header .btn{min-height:40px;padding:0 1.1rem;font-size:.92rem}
+.menubtn{display:none;border:2px solid var(--line);background:transparent;border-radius:999px;padding:.35rem .9rem;font-weight:600;font-size:.85rem;min-height:36px}
+@media (max-width:1270px){
+  .menubtn{display:inline-flex;align-items:center}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--header);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:.4rem max(16px,env(safe-area-inset-right,0px)) 1rem max(16px,env(safe-area-inset-left,0px));box-shadow:0 18px 30px -20px var(--shadow)}
+  nav.main.open{display:flex}
+  nav.main a{padding:.85rem 0;border-bottom:1px solid var(--line)}
+}
+@media (max-width:520px){header .btn{display:none}.brand small{display:none}}
+
+/* hero */
+.hero{position:relative;z-index:0;overflow:hidden;background:var(--bg);display:flex;align-items:flex-end;min-height:clamp(620px,86vh,800px);padding-block:clamp(2.5rem,5vw,4rem) clamp(6.6rem,11vw,9rem)}
+.slides{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--line)}
+.slide{position:absolute;inset:0;margin:0;transform:translateX(100%);z-index:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide.on{transform:none;z-index:3;transition:transform .95s cubic-bezier(.7,0,.25,1)}
+.slide.prev{transform:none;z-index:2}
+.stag{position:absolute;top:1rem;right:max(16px,env(safe-area-inset-right,0px));background:rgba(255,255,255,.92);color:#16301F;font-size:.78rem;font-weight:500;padding:.25rem .75rem;border-radius:999px}
+.hctl{position:absolute;right:max(16px,calc((100% - 1180px)/2));bottom:clamp(6.6rem,11.5vw,9.2rem);z-index:6;display:flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.94);color:#16301F;padding:.3rem .55rem;border-radius:999px;box-shadow:0 8px 22px -10px rgba(0,0,0,.4)}
+.cbtn{width:34px;height:34px;border-radius:50%;border:0;background:transparent;color:#16301F;display:grid;place-items:center;padding:0}
+.cbtn:hover{background:#E6F4E8}
+.cbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cbtn .ic-play{display:none;fill:currentColor;stroke:none}
+.cbtn.paused .ic-play{display:block}.cbtn.paused .ic-pause{display:none}
+.dots{display:flex;gap:.5rem;align-items:center;padding:0 .3rem}
+.dot{position:relative;width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#BFD8C6;transition:width .25s,background .25s}
+.dot::before{content:"";position:absolute;inset:-9px -4px}
+.dot[aria-current="true"]{width:26px;border-radius:6px;background:#0F8040}
+/* glass layer: dark tint plus blur, both fading out towards the photo */
+.hglass{position:absolute;z-index:4;left:0;top:0;bottom:0;width:min(68%,940px);pointer-events:none;background:linear-gradient(90deg,rgba(6,22,14,.74) 0%,rgba(6,22,14,.6) 48%,rgba(6,22,14,.26) 80%,rgba(6,22,14,0) 100%);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 50%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 50%,transparent 100%)}
+.hwrap{position:relative;z-index:5;width:100%;pointer-events:none}
+.hwrap .htext{pointer-events:auto}
+.hero .in{display:block}
+.htext{max-width:35rem;color:#fff}
+.hero .eyebrow{color:#FFD45A}
+.hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:500;margin-top:.7rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.hero h1 mark{background:none;display:inline-block;background-image:linear-gradient(#FFC41F,#FFC41F);background-repeat:no-repeat;background-position:0 94%;background-size:100% .11em;color:inherit}
+.hero .lead{margin-top:1.1rem;font-size:1.06rem;max-width:31rem;color:rgba(255,255,255,.94);text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.hero .btn-primary{background:#FFC41F;color:#1A1300}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.75)}
+.hero .chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.42);color:#fff}
+.hero .chip i{box-shadow:0 0 0 2px #fff}
+.hero :focus-visible{outline-color:#FFD45A}
+@media (max-width:760px){
+  .hero{min-height:clamp(600px,84vh,720px);padding:0 0 2.2rem}
+  .hglass{width:100%;top:auto;height:80%;background:linear-gradient(0deg,rgba(6,22,14,.84) 0%,rgba(6,22,14,.68) 56%,rgba(6,22,14,0) 100%);-webkit-mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%);mask-image:linear-gradient(0deg,#000 0%,#000 66%,transparent 100%)}
+  .hctl{top:.9rem;bottom:auto;right:max(16px,env(safe-area-inset-right,0px))}
+  .stag{right:auto;left:max(16px,env(safe-area-inset-left,0px))}
+  .hero .chips{display:none}
+  .slides{background:#0A1A10}
+  .slide img{height:66%}
+  .slide:nth-child(1) img{object-position:24% 50% !important}
+  .slide:nth-child(2) img{object-position:64% 40% !important}
+  .slide:nth-child(3) img{object-position:84% 30% !important}
+  .slide:first-child img{object-position:70% 50% !important}
+  section.qt{margin-top:1.6rem}
+}
+@media (prefers-reduced-motion: reduce){.slide.on{transition:none}}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.chip{display:flex;align-items:center;gap:.6rem;border:1px solid var(--line);background:var(--surface);padding:.5rem .9rem;border-radius:999px;font-size:.92rem}
+.chip i{width:.8rem;height:.8rem;border-radius:50%;flex:none}
+.chip b{font-weight:600}
+.arch{position:relative;max-width:430px;width:100%;justify-self:center;margin-bottom:1.2rem}
+.arch .pic{aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;border:6px solid var(--gold);background:#073;}
+.arch .pic img{width:100%;height:100%;object-fit:cover;object-position:32% 50%}
+.band img,.arch .seal{height:auto}
+.band img{height:100%}
+.arch .seal{position:absolute;left:-2.2rem;bottom:-1.6rem;width:clamp(110px,16vw,150px);height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.4))}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(40px,6vw,80px);display:block}
+
+/* photo mosaic, quick tiles, life gallery */
+.mosaic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,clamp(150px,22vw,250px));gap:10px;width:100%}
+.mosaic figure{margin:0;overflow:hidden;background:var(--line)}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic .big{grid-row:1 / span 2;border-radius:999px 999px 0 0;border:5px solid var(--gold)}
+.mosaic .big img{object-position:62% 50%}
+.qt{padding-bottom:clamp(2.5rem,6vw,4rem);margin-top:calc(-1 * clamp(3.2rem,7vw,5.2rem));position:relative;z-index:2}
+.qt .in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,2vw,1.4rem)}
+.qtile{--c:var(--primary);box-shadow:0 18px 34px -20px var(--shadow);display:grid;gap:.35rem;align-content:start;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);padding:1.2rem 1.2rem 1.1rem;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.qtile:hover{transform:translateY(-3px);box-shadow:0 14px 26px -16px var(--shadow)}
+.qtile.fr{--c:var(--fr)}.qtile.en{--c:var(--en)}.qtile.gold{--c:var(--gold)}
+.qtile b{font-family:var(--font-d);font-size:1.25rem;font-weight:600;line-height:1.1}
+.qtile span{color:var(--muted);font-size:.95rem}
+.qtile em{font-style:normal;font-weight:600;font-size:.9rem;margin-top:.4rem}
+@media (max-width:900px){.qt .in{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.qt .in{grid-template-columns:minmax(0,1fr)}}
+.life .lg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.life figure{margin:0;display:grid;gap:.5rem;align-content:start}
+.life .l1,.life .l3,.life .l5{grid-column:span 4}
+.life button{border:0;padding:0;background:var(--line);display:block;overflow:hidden}
+.life img{width:100%;height:clamp(200px,24vw,300px);object-fit:cover;transition:transform .5s}
+.life button:hover img{transform:scale(1.04)}
+.life figcaption{font-size:.92rem;font-weight:500}
+.life .note{margin-top:1rem;color:var(--muted);font-size:.85rem}
+@media (max-width:700px){.life figure{grid-column:1 / -1 !important}.life img{height:auto;aspect-ratio:3/2}}
+
+/* sections */
+section.block{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.head{max-width:44rem;display:grid;gap:.9rem;margin-bottom:2.4rem}
+.head h2{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:500}
+.head p{color:var(--muted);font-size:1.08rem}
+
+/* doors */
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,3vw,2rem);align-items:end}
+.door{position:relative;padding:clamp(4.5rem,9vw,7rem) clamp(1.2rem,3vw,2.2rem) 1.8rem;border-radius:200px 200px 0 0;border:2px solid var(--c);background:var(--soft);display:grid;gap:.6rem;text-align:center;justify-items:center}
+.door.fr{--c:var(--fr);--soft:var(--fr-soft)}
+.door.en{--c:var(--en);--soft:var(--en-soft)}
+.door .greet{font-family:var(--font-d);font-weight:500;font-size:clamp(2.4rem,6vw,4.2rem);color:var(--c);line-height:1}
+.door h3{font-size:1.2rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.door .range{font-size:1.1rem;font-weight:500}
+.door .knob{position:absolute;right:1.2rem;top:52%;width:12px;height:12px;border-radius:50%;background:var(--c)}
+.gatecap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(1.2rem,4vw,3rem);margin-top:3rem;align-items:center}
+.gatecap img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line)}
+.gatecap p{color:var(--muted);max-width:30rem}
+.gatecap p b{color:var(--ink)}
+@media (max-width:700px){.doors,.gatecap{grid-template-columns:minmax(0,1fr)}.door{border-radius:140px 140px 0 0}}
+
+/* why two languages + values */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,3vw,2.2rem);margin-top:1.2rem}
+.why>div{border-top:3px solid var(--gold);padding-top:1rem;display:grid;gap:.5rem;align-content:start}
+.why h3{font-size:1.25rem;font-weight:600}
+.why p{color:var(--muted)}
+.whyh{margin-top:3.6rem}
+@media (max-width:700px){.why{grid-template-columns:minmax(0,1fr)}}
+.values{background:var(--surface);border-block:1px solid var(--line)}
+.mission{font-family:var(--font-d);font-weight:500;font-size:clamp(1.5rem,3.3vw,2.5rem);line-height:1.25;max-width:56rem;text-wrap:pretty}
+.mission mark{color:inherit;background-color:transparent;background-image:linear-gradient(var(--gold),var(--gold));background-repeat:no-repeat;background-position:0 94%;background-size:100% .14em}
+.vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,2.5vw,2rem);margin-top:2.6rem}
+.vgrid>div{border-top:3px solid var(--primary);padding-top:1rem}
+.vgrid h3{font-size:1.4rem;font-weight:600}
+.vgrid p{color:var(--muted);margin-top:.4rem}
+@media (max-width:900px){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.vgrid{grid-template-columns:minmax(0,1fr)}}
+.aims{margin-top:2.8rem;display:grid;gap:.8rem}
+.pills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.pills li{border:2px solid var(--line);padding:.45rem .95rem;border-radius:999px;font-weight:500;background:var(--bg)}
+.ambition{margin-top:2.8rem;background:var(--hero);color:var(--on-hero);padding:clamp(1.4rem,4vw,2.6rem);display:grid;gap:.6rem}
+.ambition .eyebrow{color:var(--on-hero)}
+.ambition .big{font-family:var(--font-d);font-weight:500;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.1}
+.sign{margin:2.8rem 0 0;display:grid;gap:.5rem}
+.sign button{border:0;padding:0;background:var(--line);display:block;width:100%}
+.sign img{width:100%;height:auto}
+.sign figcaption{font-size:.9rem;color:var(--muted)}
+.feat{list-style:none;margin:0 0 2.2rem;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 2rem}
+.feat li{display:flex;gap:.7rem;align-items:flex-start}
+.feat li::before{content:"";flex:none;width:.7rem;height:.7rem;margin-top:.5rem;background:var(--gold);border-radius:50%}
+@media (max-width:700px){.feat{grid-template-columns:minmax(0,1fr)}}
+
+/* class track */
+.classes{background:var(--surface);border-block:1px solid var(--line)}
+.trackbox{position:relative;padding-top:2.4rem}
+.track{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));position:relative}
+.stop{background:none;border:0;padding:0;display:grid;justify-items:center;gap:.5rem;position:relative;min-width:0}
+.stop::before{content:"";position:absolute;top:22px;left:0;right:0;height:6px;background:var(--c)}
+.stop.fr{--c:var(--fr)}.stop.en{--c:var(--en)}
+.stop .dot{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:var(--surface);border:4px solid var(--c);display:grid;place-items:center;font-weight:600;font-size:.8rem;transition:transform .15s}
+.stop:hover .dot{transform:scale(1.1)}
+.stop[aria-pressed="true"] .dot{background:var(--c);color:var(--surface);transform:scale(1.18)}
+.stop .nm{font-size:.82rem;font-weight:500;color:var(--muted)}
+.stop[aria-pressed="true"] .nm{color:var(--ink)}
+.stop:first-child::before{left:50%}.stop:last-child::before{right:50%}
+.switchtag{position:absolute;top:0;left:calc(100% * 3 / 7);transform:translateX(-50%);background:var(--gold);color:#1A1300;font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.25rem .7rem;border-radius:999px;white-space:nowrap}
+.switchtag::after{content:"";position:absolute;left:50%;top:100%;border:6px solid transparent;border-top-color:var(--gold);transform:translateX(-50%)}
+.panel{margin-top:2.4rem;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1.5rem;align-items:center;padding:clamp(1.2rem,3vw,2rem);border:2px solid var(--c);background:var(--soft)}
+.panel.fr{--c:var(--fr);--soft:var(--fr-soft)}.panel.en{--c:var(--en);--soft:var(--en-soft)}
+.panel .tag{display:inline-block;background:var(--c);color:var(--surface);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem}
+.panel h3{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600;margin-top:.8rem}
+.panel p{margin-top:.5rem;color:var(--muted)}
+.panel .hint{color:var(--ink);font-weight:500}
+.panel .right{display:grid;gap:1rem;justify-items:start}
+.panel .hello{font-family:var(--font-d);font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--c);line-height:1}
+@media (max-width:700px){.panel{grid-template-columns:minmax(0,1fr)}.stop .dot{width:38px;height:38px;border-width:3px}.stop::before{top:18px;height:5px}.stop .nm{font-size:.72rem}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.gal figure{margin:0;display:grid;gap:.5rem;align-content:start}
+.gal .a{grid-column:span 5}.gal .b{grid-column:span 7}.gal .c{grid-column:span 12}.gal .c img{height:clamp(220px,34vw,420px)}
+.gal button{border:0;padding:0;background:var(--line);display:block;overflow:hidden}
+.gal img{width:100%;height:clamp(220px,30vw,360px);object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.04)}
+.gal figcaption{font-size:.9rem;color:var(--muted)}
+@media (max-width:700px){.gal figure{grid-column:1 / -1 !important}.gal img{height:auto;aspect-ratio:16/10}}
+#lb{position:fixed;inset:0;z-index:60;background:rgba(5,15,9,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));gap:.8rem;grid-template-rows:1fr auto}
+#lb img{max-width:100%;max-height:100%;margin:auto;object-fit:contain}
+#lb p{color:#E7F2E9;text-align:center}
+#lb .x{position:absolute;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));width:48px;height:48px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;font-size:1.6rem;line-height:1}
+
+/* visit */
+.band{height:clamp(150px,24vw,280px);overflow:hidden;position:relative}
+.band img{width:100%;height:100%;object-fit:cover;object-position:30% 35%}
+.band span{position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:12px;background:var(--header);padding:.25rem .7rem;font-size:.8rem;color:var(--muted)}
+.visit .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+.info{display:grid;gap:1.6rem}
+.info h3{font-size:1rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.info .big{font-family:var(--font-d);font-weight:500;font-size:1.35rem;line-height:1.3}
+.num{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.3rem}
+.num span{font-family:var(--font-d);font-weight:500;font-size:1.35rem;user-select:all}
+.mini{border:2px solid var(--line);background:transparent;border-radius:999px;padding:.2rem .8rem;font-size:.82rem;font-weight:600;min-height:32px}
+.mini:hover{border-color:var(--primary)}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.95rem;user-select:all;background:var(--surface);border:1px solid var(--line);padding:.1rem .5rem}
+form.card{background:var(--surface);border:1px solid var(--line);padding:clamp(1.2rem,3vw,2rem);display:grid;gap:1rem;box-shadow:0 18px 40px -24px var(--shadow)}
+form.card h3{font-size:1.7rem;font-weight:600}
+label{display:grid;gap:.35rem;font-weight:500;font-size:.92rem}
+input,select{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);padding:.7rem .8rem;min-height:48px;width:100%;border-radius:0}
+input:focus,select:focus{border-color:var(--primary);outline:none}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.out{display:grid;gap:.8rem;border-top:2px dashed var(--line);padding-top:1rem}
+.out pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--font-b);font-size:.98rem;background:var(--bg);border:1px solid var(--line);padding:.9rem}
+.out .acts{display:flex;gap:.7rem;flex-wrap:wrap}
+.out small{color:var(--muted)}
+@media (max-width:820px){.visit .in{grid-template-columns:minmax(0,1fr)}.row2{grid-template-columns:minmax(0,1fr)}}
+
+/* kids corner, enrolment, careers */
+.kids{background:#FFC41F;color:#1A1300;padding-block:clamp(2.5rem,6vw,4.2rem)}
+.kids .in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(1.5rem,5vw,3.5rem);align-items:center}
+.kids .eyebrow{color:#5B4200}
+.kids h2{font-size:clamp(2.2rem,5.4vw,3.8rem);font-weight:500;margin-top:.5rem}
+.kids p.lead{margin-top:.8rem;font-size:1.15rem;max-width:30rem}
+.kids :focus-visible{outline-color:#0F8040}
+.playbtn{margin-top:1.5rem;background:#0F8040;color:#fff;border:0;border-radius:999px;min-height:58px;padding:0 2.2rem;font-weight:600;font-size:1.2rem;font-family:var(--font-b);transition:transform .15s,box-shadow .15s}
+.playbtn:hover{transform:translateY(-2px) rotate(-1deg);box-shadow:0 10px 22px rgba(10,68,38,.35)}
+.soon{margin-top:1rem;font-weight:600;background:#fff;color:#1A1300;display:inline-block;padding:.6rem 1rem}
+.wgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;max-width:340px;width:100%;justify-self:center}
+.wgrid span{aspect-ratio:1;display:grid;place-items:center;background:#fff;color:#0F8040;font-family:var(--font-d);font-weight:600;font-size:clamp(.95rem,3.4vw,1.35rem)}
+.wgrid span.hit{background:#0F8040;color:#fff}
+@media (max-width:700px){.kids .in{grid-template-columns:minmax(0,1fr)}}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+@media (max-width:820px){.two{grid-template-columns:minmax(0,1fr)}}
+.secbadge{--c:var(--fr);--soft:var(--fr-soft);padding:1.2rem 1.4rem;border:2px solid var(--c);background:var(--soft);display:grid;gap:.25rem;margin-top:1.8rem}
+.secbadge.fr{--c:var(--fr);--soft:var(--fr-soft)}.secbadge.en{--c:var(--en);--soft:var(--en-soft)}
+.secbadge .greet{font-family:var(--font-d);font-weight:500;font-size:clamp(2rem,5vw,3rem);color:var(--c);line-height:1}
+.secbadge .nm{font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem}
+.careers{background:var(--surface);border-block:1px solid var(--line)}
+.jobs{display:grid;gap:.8rem}
+.nojobs{border:2px dashed var(--line);padding:1.1rem 1.2rem;color:var(--muted)}
+.job{--c:var(--fr);--soft:var(--fr-soft);display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;border:2px solid var(--c);background:var(--soft);padding:1rem 1.2rem}
+.job.fr{--c:var(--fr);--soft:var(--fr-soft)}.job.en{--c:var(--en);--soft:var(--en-soft)}
+.job .tag{display:inline-block;background:var(--c);color:var(--surface);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem}
+.job h4{margin:.4rem 0 0;font-family:var(--font-d);font-size:1.3rem}
+.job p{color:var(--muted);font-size:.92rem}
+.careers form.card{box-shadow:0 18px 40px -24px var(--shadow)}
+textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);padding:.7rem .8rem;min-height:96px;width:100%;border-radius:0;resize:vertical}
+textarea:focus{border-color:var(--primary);outline:none}
+input[aria-invalid="true"]{border-color:var(--fr)}
+.fine{color:var(--muted);font-size:.88rem}
+.btns{display:flex;gap:.7rem;flex-wrap:wrap}
+.own{flex:1 1 100%;border-top:1px solid rgba(255,255,255,.22);padding-top:1rem;margin-top:.4rem;font-size:.86rem;color:var(--hero-muted)}
+.own b{color:var(--on-hero)}
+
+/* why French badge, media, bibliography */
+.dalf{margin-top:2.2rem;display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;border:1px solid var(--line);background:var(--surface);padding:1rem 1.4rem 1rem 1rem;width:fit-content;max-width:100%}
+.dalf span{max-width:19rem}
+.dalf img{width:clamp(150px,24vw,220px);height:auto;flex:none;background:#fff}
+.dalf span{color:var(--muted);font-size:.93rem}
+.media{background:var(--surface);border-block:1px solid var(--line)}
+.ytbtn{background:var(--ink);color:var(--bg);gap:.6rem}
+.ytbtn svg{width:20px;height:20px;fill:currentColor}
+.btn.off{opacity:.55;pointer-events:none}
+.screen{aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#E3F6E8 0%,#FFF1BF 100%);border:1px solid var(--line);overflow:hidden;box-shadow:0 28px 50px -30px var(--shadow)}
+.screen .play{width:clamp(64px,10vw,92px);aspect-ratio:1;border-radius:50%;background:#0F8040;display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(15,128,64,.6)}
+.screen .play svg{width:38%;fill:#fff;margin-left:6%}
+.screen .bar{position:absolute;left:5%;right:5%;bottom:9%;height:6px;background:rgba(15,128,64,.2)}
+.screen .bar i{display:block;width:34%;height:100%;background:#0F8040}
+.screen figcaption{position:absolute;left:5%;top:7%;font-size:.85rem;color:#16301F;background:rgba(255,255,255,.88);padding:.25rem .7rem;border-radius:999px}
+.themes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,2vw,1.4rem);margin-bottom:2.2rem}
+.theme{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);padding:1.1rem 1.2rem;display:grid;gap:.35rem;justify-items:start}
+.theme svg{width:32px;height:32px;fill:none;stroke:var(--c);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.theme b{font-family:var(--font-d);font-size:1.12rem;font-weight:600}
+.theme span{color:var(--muted);font-size:.92rem}
+@media (max-width:900px){.themes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.themes{grid-template-columns:minmax(0,1fr)}}
+.filters{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.8rem}
+.filters .lbl{flex:none;width:4.2rem;padding-top:.55rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.fgroup{display:flex;flex-wrap:wrap;gap:.45rem;min-width:0}
+.fchip{border:2px solid var(--line);background:var(--surface);border-radius:999px;padding:.25rem .9rem;min-height:40px;font-size:.92rem}
+.fchip:hover{border-color:var(--primary)}
+.fchip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.blist{margin-top:1.6rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:900px){.blist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.blist{grid-template-columns:minmax(0,1fr)}.filters{flex-direction:column;gap:.2rem}.filters .lbl{padding-top:0}}
+.bempty{grid-column:1 / -1;border:2px dashed var(--line);background:var(--surface);padding:clamp(1.3rem,3vw,2.1rem);display:grid;gap:.7rem;justify-items:start}
+.bempty b{font-family:var(--font-d);font-size:1.4rem;font-weight:600}
+.bempty p{color:var(--muted);max-width:38rem}
+.bcard{background:var(--surface);border:1px solid var(--line);padding:1.1rem 1.2rem;display:grid;gap:.5rem;align-content:start}
+.bcard .tag{justify-self:start;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;background:var(--fr-soft);color:var(--ink);padding:.2rem .6rem}
+.bcard h4{margin:0;font-family:var(--font-d);font-size:1.2rem;font-weight:600}
+.bcard p{color:var(--muted);font-size:.95rem}
+
+footer{background:var(--hero);color:var(--on-hero);padding-block:2.4rem calc(2.4rem + env(safe-area-inset-bottom,0px))}
+footer .in{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+footer img{width:76px}
+footer .t{flex:1 1 260px}
+footer b{font-family:var(--font-d);font-size:1.25rem}
+footer p{color:var(--hero-muted);font-size:.92rem}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto !important}}
+</style>
+
+<header class="top">
+  <div class="wrap"><div class="in">
+    <a class="brand" href="#top" aria-label="Green Country School Ltd.">
+      <img src="img/emblem.png" alt="Green Country School emblem" width="52" height="48">
+      <span><b>Green Country School Ltd.</b><small data-i18n="brand_sub">Nursery &amp; Primary · Gatenga</small></span>
+    </a>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <a href="#programmes" data-i18n="nav_prog">Programmes</a>
+      <a href="#values" data-i18n="nav_values">Values</a>
+      <a href="#classes" data-i18n="nav_class">Classes</a>
+      <a href="#enrol" data-i18n="nav_enrol">Enrol</a>
+      <a href="#careers" data-i18n="nav_careers">Careers</a>
+      <a href="#media" data-i18n="nav_media">Media</a>
+      <a href="#biblio" data-i18n="nav_biblio">Bibliography</a>
+      <a href="#visit" data-i18n="nav_visit">Visit us</a>
+    </nav>
+    <button class="flag" id="langbtn" type="button" data-l="en" aria-label="Language: English. Switch to French" title="English / Français">
+      <svg class="fl-en" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect x="12.5" width="5" height="20" fill="#CE1124"/><rect y="7.5" width="30" height="5" fill="#CE1124"/></svg>
+      <svg class="fl-fr" viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#0055A4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg>
+    </button>
+    <a class="btn btn-primary" href="#enrol" data-i18n="cta_enrol">Enrol now</a>
+    <button class="menubtn" type="button" id="menubtn" aria-expanded="false" aria-controls="mainnav" data-i18n="menu">Menu</button>
+  </div></div>
+</header>
+
+<main id="top">
+<section class="hero" aria-roledescription="carousel" aria-label="School photos">
+  <div class="slides" id="slides">
+    <figure class="slide on" role="group" aria-roledescription="slide">
+      <img src="img/hero-campus.jpg" alt="" data-alt="alt_s1" width="2000" height="892" fetchpriority="high" style="object-position:50% 55%">
+      <figcaption class="stag" data-i18n="s_campus">Our campus</figcaption>
+    </figure>
+    <figure class="slide" role="group" aria-roledescription="slide">
+      <img src="img/ph-globe.jpg" alt="" data-alt="alt_s2" width="910" height="565" style="object-position:50% 38%">
+      <figcaption class="stag" data-i18n="s_illus">Illustrative photo</figcaption>
+    </figure>
+    <figure class="slide" role="group" aria-roledescription="slide">
+      <img src="img/ph-computer.jpg" alt="" data-alt="alt_s3" width="910" height="606" style="object-position:50% 30%">
+      <figcaption class="stag" data-i18n="s_illus">Illustrative photo</figcaption>
+    </figure>
+    <div class="hctl">
+      <button class="cbtn" type="button" id="sprev" data-i18n-aria="prev_ph" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="dots" id="dots"></div>
+      <button class="cbtn" type="button" id="snext" data-i18n-aria="next_ph" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button class="cbtn" type="button" id="spause" data-i18n-aria="pause_ph" aria-label="Pause slideshow"><svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></button>
+    </div>
+  </div>
+  <div class="hglass" aria-hidden="true"></div>
+  <div class="wrap hwrap"><div class="in">
+    <div class="htext">
+      <p class="eyebrow" data-i18n="hero_eyebrow">Nursery &amp; Primary · Gatenga, Kicukiro, Kigali</p>
+      <h1><span data-i18n="h1_a">We Deliver</span> <mark data-i18n="h1_b">the difference.</mark></h1>
+      <p class="lead" data-i18n="hero_lead">Green Country School runs an English and French programme on one campus in Gatenga. Our French section covers Maternelle to 2ème Primaire. Our English section covers Primary 3 to Primary 6.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#enrol" data-i18n="hero_enrol">Enrol your child</a>
+        <a class="btn btn-ghost" href="#visit" data-i18n="cta_visit">Plan a visit</a>
+      </div>
+      <div class="chips">
+        <div class="chip"><i style="background:var(--fr)"></i><span><b data-i18n="chip_fr_k">French section</b> · <span data-i18n="chip_fr_v">Maternelle – 2ème Primaire</span></span></div>
+        <div class="chip"><i style="background:var(--en)"></i><span><b data-i18n="chip_en_k">English section</b> · <span data-i18n="chip_en_v">Primary 3 – Primary 6</span></span></div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="qt wrap">
+  <div class="in">
+    <a class="qtile fr" href="#programmes"><b data-i18n="qt1_t">French section</b><span data-i18n="qt1_d">Maternelle – 2ème Primaire</span><em data-i18n="qt_more">Learn more →</em></a>
+    <a class="qtile en" href="#programmes"><b data-i18n="qt2_t">English section</b><span data-i18n="qt2_d">Primary 3 – Primary 6</span><em data-i18n="qt_more">Learn more →</em></a>
+    <a class="qtile gold" href="#enrol"><b data-i18n="qt3_t">Enrolment</b><span data-i18n="qt3_d">Send an enrolment request for your child</span><em data-i18n="qt_go">Enrol now →</em></a>
+    <a class="qtile" href="#careers"><b data-i18n="qt4_t">Careers</b><span data-i18n="qt4_d">Teach with us in French or in English</span><em data-i18n="qt_go2">See positions →</em></a>
+  </div>
+</section>
+
+<section class="block" id="programmes">
+  <div class="wrap"><div class="in">
+    <div class="head">
+      <p class="eyebrow" data-i18n="prog_eyebrow">Programmes</p>
+      <h2 data-i18n="prog_h2">Two languages. One campus.</h2>
+      <p data-i18n="prog_p">Both sections share one gate on the Gatenga road. The board at the entrance lists which classes belong to each.</p>
+    </div>
+    <div class="doors">
+      <article class="door fr"><span class="knob"></span>
+        <div class="greet">Bonjour !</div>
+        <h3 data-i18n="door_fr_name">French section</h3>
+        <p class="range" data-i18n="door_fr_range">Maternelle – 2ème Primaire</p>
+      </article>
+      <article class="door en"><span class="knob"></span>
+        <div class="greet" data-i18n="door_en_greet">Hello!</div>
+        <h3 data-i18n="door_en_name">English section</h3>
+        <p class="range" data-i18n="door_en_range">Primary 3 – Primary 6</p>
+      </article>
+    </div>
+    <div class="gatecap">
+      <img src="img/gate.jpg" alt="The entrance gate of Green Country School with the English and French programme board" width="1600" height="866" loading="lazy">
+      <p data-i18n-html="gate_p"><b>As written on our gate.</b> French section: Maternelle to 2ème Primaire. English section: Primary 3 to Primary 6. Come and see it for yourself.</p>
+    </div>
+    <div class="head whyh" style="margin-bottom:0">
+      <p class="eyebrow" data-i18n="wf_eyebrow">Why we teach French</p>
+      <h2 data-i18n="wf_h2" style="font-size:clamp(1.6rem,3.4vw,2.4rem)">French as a foreign language, to an official standard</h2>
+      <p data-i18n="wf_p">At Green Country School, French is taught as a foreign language (FLE). Our main value is a recognised level of French, measured by the official DELF and DALF diplomas.</p>
+    </div>
+    <div class="why">
+      <div><h3 data-i18n="wf1_t">French as a foreign language</h3><p data-i18n="wf1_p">Pupils learn to understand, speak, read and write French step by step, with methods made for learners whose first language is not French.</p></div>
+      <div><h3 data-i18n="wf2_t">One scale of levels</h3><p data-i18n="wf2_p">Progress is described with the Common European Framework of Reference for Languages (CEFR), from A1 to C2.</p></div>
+      <div><h3 data-i18n="wf3_t">Official diplomas</h3><p data-i18n="wf3_p">DELF and DALF are the official diplomas of the French Ministry of National Education for non-native speakers of French, recognised worldwide. DELF Prim is designed for primary-school pupils.</p></div>
+    </div>
+    <div class="dalf">
+      <img src="img/delf-dalf.jpg" alt="France Éducation international, DELF DALF" width="250" height="250">
+      <span data-i18n="dalf_p">Official diplomas in French as a foreign language, from A1 to C2</span>
+    </div>
+  </div></div>
+</section>
+
+<section class="block life" id="life">
+  <div class="wrap"><div class="in">
+    <div class="head">
+      <p class="eyebrow" data-i18n="life_eyebrow">Life at school</p>
+      <h2 data-i18n="life_h2">Learning, curiosity and play</h2>
+      <p data-i18n="life_p">A school where children learn together, read, discover and play.</p>
+    </div>
+    <div class="lg">
+      <figure class="l1"><button type="button" data-lb="img/ph-class.jpg" data-cap="lc1"><img src="img/ph-class.jpg" alt="" width="910" height="606" loading="lazy"></button><figcaption data-i18n="lc1">Learning together</figcaption></figure>
+      <figure class="l3"><button type="button" data-lb="img/ph-write.jpg" data-cap="lc3"><img src="img/ph-write.jpg" alt="" width="910" height="606" loading="lazy"></button><figcaption data-i18n="lc3">A desire to learn</figcaption></figure>
+      <figure class="l5"><button type="button" data-lb="img/ph-play.jpg" data-cap="lc5"><img src="img/ph-play.jpg" alt="" width="910" height="606" loading="lazy"></button><figcaption data-i18n="lc5">Play and teamwork</figcaption></figure>
+    </div>
+    <p class="note" data-i18n="life_note">Illustrative photos.</p>
+  </div></div>
+</section>
+
+<section class="block values" id="values">
+  <div class="wrap"><div class="in">
+    <div class="head">
+      <p class="eyebrow" data-i18n="val_eyebrow">What we stand for</p>
+      <h2 data-i18n="val_h2">A school that exists to make a difference</h2>
+    </div>
+    <p class="mission" data-i18n-html="val_mission">Green Country School exists to make a <mark>positive difference</mark> in every child's lifelong learning journey by developing in students a sense of <mark>responsibility</mark>, the value of <mark>honesty</mark>, <mark>respect</mark> for others and a <mark>desire to learn</mark>.</p>
+    <div class="vgrid">
+      <div><h3 data-i18n="v1">Responsibility</h3><p data-i18n="v1d">We develop a sense of responsibility in every student.</p></div>
+      <div><h3 data-i18n="v2">Respect</h3><p data-i18n="v2d">We teach respect for others.</p></div>
+      <div><h3 data-i18n="v3">Honesty</h3><p data-i18n="v3d">We teach the value of honesty.</p></div>
+      <div><h3 data-i18n="v4">Excellence</h3><p data-i18n="v4d">We provide the children of Rwanda with a high quality of education.</p></div>
+    </div>
+    <div class="aims">
+      <p class="eyebrow" data-i18n="aims_h">What we work towards</p>
+      <ul class="pills">
+        <li data-i18n="a1">High quality education for Rwandan children</li>
+        <li data-i18n="a2">Patriotism</li>
+        <li data-i18n="a3">Justice and peace</li>
+        <li data-i18n="a4">Creativity</li>
+        <li data-i18n="a5">Competitiveness</li>
+        <li data-i18n="a6">Moral conscience</li>
+      </ul>
+    </div>
+    <div class="ambition">
+      <p class="eyebrow" data-i18n="amb_h">Our ambition</p>
+      <p class="big" data-i18n="amb">Becoming one of the reference schools in Rwanda.</p>
+    </div>
+    <figure class="sign">
+      <button type="button" data-lb="img/sign-values.jpg" data-cap="cap_sign"><img src="img/sign-values.jpg" alt="" width="1800" height="719" loading="lazy"></button>
+      <figcaption data-i18n="cap_sign">Our mission and values</figcaption>
+    </figure>
+  </div></div>
+</section>
+
+<section class="block classes" id="classes">
+  <div class="wrap"><div class="in">
+    <div class="head">
+      <p class="eyebrow" data-i18n="class_eyebrow">Your child's class</p>
+      <h2 data-i18n="class_h2">Find your child's class</h2>
+      <p data-i18n="class_p">Select a class to see which section it belongs to. The track changes colour where the French section ends and the English section begins.</p>
+    </div>
+    <div class="trackbox">
+      <span class="switchtag" data-i18n="switch_tag">FR → EN</span>
+      <div class="track" id="track" role="group" aria-label="Classes"></div>
+    </div>
+    <div class="panel fr" id="panel" aria-live="polite"></div>
+  </div></div>
+</section>
+
+<section class="block" id="campus">
+  <div class="wrap"><div class="in">
+    <div class="head">
+      <p class="eyebrow" data-i18n="campus_eyebrow">Campus</p>
+      <h2 data-i18n="campus_h2">A brick campus on the Gatenga road</h2>
+      <p data-i18n="campus_p">Real photos of our grounds in Gatenga. Tap a photo to enlarge it.</p>
+    </div>
+    <ul class="feat">
+      <li data-i18n="ft1">Two-storey brick classroom blocks with covered walkways</li>
+      <li data-i18n="ft2">A paved courtyard at the centre of the campus</li>
+      <li data-i18n="ft3">A walled campus with a gate on the Gatenga road</li>
+      <li data-i18n="ft4">Pupils in school uniform painted on the gate to welcome visitors</li>
+    </ul>
+    <div class="gal">
+      <figure class="a"><button type="button" data-lb="img/roadside.jpg" data-cap="cap_road"><img src="img/roadside.jpg" alt="" width="1600" height="717" loading="lazy"></button><figcaption data-i18n="cap_road">The roadside sign: nursery and primary section</figcaption></figure>
+      <figure class="b"><button type="button" data-lb="img/courtyard.jpg" data-cap="cap_court"><img src="img/courtyard.jpg" alt="" width="1600" height="717" loading="lazy"></button><figcaption data-i18n="cap_court">Entrance courtyard and stairs to the first floor</figcaption></figure>
+      <figure class="c"><button type="button" data-lb="img/block-front.jpg" data-cap="cap_block"><img src="img/block-front.jpg" alt="" width="1400" height="816" loading="lazy"></button><figcaption data-i18n="cap_block">The classroom block with upper-floor walkways</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<section class="block media" id="media">
+  <div class="wrap"><div class="in two">
+    <div>
+      <div class="head" style="margin:0 0 1.6rem">
+        <p class="eyebrow" data-i18n="media_eyebrow">Media</p>
+        <h2 data-i18n="media_h2">Films and documentaries made by our pupils</h2>
+        <p data-i18n="media_p">Documentaries and media projects made by our pupils will be posted on our YouTube channel. Subscribe to see each new video.</p>
+      </div>
+      <p><a class="btn ytbtn" id="ytlink" href="#media" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg><span data-i18n="yt_btn">Watch on YouTube</span></a></p>
+      <p class="fine" id="ytnote" style="margin-top:.8rem" data-i18n="yt_soon">Our YouTube channel link will be added here soon.</p>
+    </div>
+    <figure class="screen" style="margin:0">
+      <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></span>
+      <span class="bar" aria-hidden="true"><i></i></span>
+      <figcaption data-i18n="screen_cap">New pupil videos will appear here</figcaption>
+    </figure>
+  </div></div>
+</section>
+
+<section class="kids" id="play">
+  <div class="wrap"><div class="in">
+    <div>
+      <p class="eyebrow" data-i18n="play_eyebrow">Kids' corner</p>
+      <h2 data-i18n="play_h2">Time to play!</h2>
+      <p class="lead" data-i18n="play_p">Hunt for hidden words and learn while you play.</p>
+      <button class="playbtn" type="button" id="playbtn" data-i18n="play_btn">Play Word Hunt</button>
+      <p class="soon" id="soon" role="status" hidden data-i18n="play_soon">Word Hunt is coming soon. More games will arrive on this page.</p>
+    </div>
+    <div class="wgrid" id="wgrid" aria-hidden="true"></div>
+  </div></div>
+</section>
+
+<section class="block biblio" id="biblio">
+  <div class="wrap"><div class="in">
+    <div class="head">
+      <p class="eyebrow" data-i18n="bib_eyebrow">Resources for parents</p>
+      <h2 data-i18n="bib_h2">Bibliography</h2>
+      <p data-i18n="bib_p">Parents are invited to download books, exercises and learning resources for their child's class. The school will also share other books for writing, reading, science and more.</p>
+    </div>
+    <div class="themes">
+      <div class="theme" style="--c:var(--en)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13.5"/></svg><b data-i18n="th1">Reading</b><span data-i18n="th1d">Books to read at home</span></div>
+      <div class="theme" style="--c:var(--fr)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg><b data-i18n="th2">Writing</b><span data-i18n="th2d">Writing practice and exercises</span></div>
+      <div class="theme" style="--c:var(--primary)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg><b data-i18n="th3">Science</b><span data-i18n="th3d">Science books and activities</span></div>
+      <div class="theme" style="--c:#C98A00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/></svg><b data-i18n="th4">Pupils' exercises</b><span data-i18n="th4d">Exercise sheets by class</span></div>
+    </div>
+    <div class="filters" role="group" aria-label="Class"><span class="lbl" data-i18n="f_class_h">Class</span><span class="fgroup" id="bf-class"></span></div>
+    <div class="filters" role="group" aria-label="Type"><span class="lbl" data-i18n="f_cat_h">Type</span><span class="fgroup" id="bf-cat"></span></div>
+    <div class="blist" id="blist" aria-live="polite"></div>
+  </div></div>
+</section>
+
+<section class="block enrol" id="enrol">
+  <div class="wrap"><div class="in two">
+    <div>
+      <div class="head" style="margin:0">
+        <p class="eyebrow" data-i18n="enrol_eyebrow">Enrolment</p>
+        <h2 data-i18n="enrol_h2">Enrol your child at Green Country School</h2>
+        <p data-i18n="enrol_p">Fill in the details. This page prepares a request that you send to the school on WhatsApp, or copy and send another way. You can also call the school on the numbers in the Visit us section.</p>
+      </div>
+      <div class="secbadge fr" id="e-sec" aria-live="polite"></div>
+    </div>
+    <form class="card" id="eform" novalidate>
+      <h3 data-i18n="enrol_form_h">Enrolment request</h3>
+      <label for="e-child"><span data-i18n="e_child">Child's full name</span>
+        <input id="e-child" type="text" autocomplete="off" data-i18n-ph="e_child_ph" placeholder="First name and surname"></label>
+      <div class="row2">
+        <label for="e-class"><span data-i18n="e_class">Class applying for</span><select id="e-class"></select></label>
+        <label for="e-dob"><span data-i18n="e_dob">Child's date of birth</span><input id="e-dob" type="date"></label>
+      </div>
+      <label for="e-prev"><span data-i18n="e_prev">Previous school (optional)</span>
+        <input id="e-prev" type="text" autocomplete="off"></label>
+      <div class="row2">
+        <label for="e-parent"><span data-i18n="e_parent">Parent or guardian name</span>
+          <input id="e-parent" type="text" autocomplete="name"></label>
+        <label for="e-phone"><span data-i18n="e_phone">Phone number</span>
+          <input id="e-phone" type="tel" autocomplete="tel" placeholder="+250 …"></label>
+      </div>
+      <button class="btn btn-primary" type="submit" data-i18n="e_make">Prepare enrolment request</button>
+      <p class="fine" data-i18n="e_note">Only what you type here is used to write the message. Nothing is stored or sent from this page.</p>
+      <div class="out" id="eout" hidden>
+        <p class="eyebrow" data-i18n="eout_h">Your enrolment request</p>
+        <pre id="emsg"></pre>
+        <div class="acts">
+          <button class="btn btn-ghost" type="button" id="ecopy" data-i18n="out_copy">Copy message</button>
+          <a class="btn btn-primary" id="ewa" href="#" target="_blank" rel="noopener" data-i18n="out_wa">Open WhatsApp</a>
+        </div>
+        <small data-i18n="out_note">Nothing is sent from this page. WhatsApp opens in a new tab with the message ready for you to send.</small>
+      </div>
+    </form>
+  </div></div>
+</section>
+
+<section class="block careers" id="careers">
+  <div class="wrap"><div class="in two">
+    <div class="info">
+      <div class="head" style="margin:0">
+        <p class="eyebrow" data-i18n="car_eyebrow">Careers</p>
+        <h2 data-i18n="car_h2">Build your career with us</h2>
+        <p data-i18n="car_p">Green Country School teaches in French and in English. Teachers for both sections can introduce themselves here, and open positions are listed below.</p>
+      </div>
+      <div>
+        <h3 data-i18n="jobs_h">Open positions</h3>
+        <div class="jobs" id="jobs"></div>
+      </div>
+    </div>
+    <form class="card" id="cform" novalidate>
+      <h3 data-i18n="car_form_h">Introduce yourself</h3>
+      <label for="c-name"><span data-i18n="c_name">Full name</span>
+        <input id="c-name" type="text" autocomplete="name"></label>
+      <div class="row2">
+        <label for="c-phone"><span data-i18n="c_phone">Phone number</span><input id="c-phone" type="tel" autocomplete="tel" placeholder="+250 …"></label>
+        <label for="c-email"><span data-i18n="c_email">Email (optional)</span><input id="c-email" type="email" autocomplete="email"></label>
+      </div>
+      <label for="c-area"><span data-i18n="c_area">I would like to teach in</span><select id="c-area"></select></label>
+      <label for="c-exp"><span data-i18n="c_exp">Qualifications and experience (short)</span><textarea id="c-exp"></textarea></label>
+      <button class="btn btn-primary" type="submit" data-i18n="c_make">Prepare my application message</button>
+      <p class="fine" data-i18n="c_note">Send your CV together with this message. Nothing is stored or sent from this page.</p>
+      <div class="out" id="cout" hidden>
+        <p class="eyebrow" data-i18n="cout_h">Your application message</p>
+        <pre id="cmsg"></pre>
+        <div class="acts">
+          <button class="btn btn-ghost" type="button" id="ccopy" data-i18n="out_copy">Copy message</button>
+          <a class="btn btn-primary" id="cwa" href="#" target="_blank" rel="noopener" data-i18n="out_wa">Open WhatsApp</a>
+        </div>
+      </div>
+    </form>
+  </div></div>
+</section>
+
+<section class="block visit" id="visit">
+  <div class="wrap"><div class="in">
+    <div class="info">
+      <div class="head" style="margin:0">
+        <p class="eyebrow" data-i18n="visit_eyebrow">Visit us</p>
+        <h2 data-i18n="visit_h2">Come and see the school</h2>
+        <p data-i18n="visit_p">Tell us which class your child is joining and when you would like to come. You can also call us directly.</p>
+      </div>
+      <div>
+        <h3 data-i18n="addr_h">Address</h3>
+        <p class="big">Green Country School Ltd.<br>Kicukiro – Gatenga<br>P.O. Box 4952, Kigali – Rwanda</p>
+      </div>
+      <div>
+        <h3 data-i18n="phone_h">Telephone</h3>
+        <div class="num"><span id="n1">(+250) 788 502 206</span><button class="mini" type="button" data-copy="n1" data-i18n="copy">Copy</button></div>
+        <div class="num"><span id="n2">0788 468 511</span><button class="mini" type="button" data-copy="n2" data-i18n="copy">Copy</button></div>
+      </div>
+      <div>
+        <h3 data-i18n="map_h">Find us</h3>
+        <p><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=-1.9785354,30.0916312" target="_blank" rel="noopener" data-i18n="maps">Open in Google Maps</a></p>
+        <p style="margin-top:.7rem;color:var(--muted);font-size:.92rem"><span data-i18n="plus">Plus code</span> <span class="code">23CR+HMJ</span></p>
+      </div>
+    </div>
+
+    <form class="card" id="vform" novalidate>
+      <h3 data-i18n="form_h">Plan a visit</h3>
+      <label for="f-name"><span data-i18n="f_name">Parent or guardian name</span>
+        <input id="f-name" type="text" autocomplete="name" data-i18n-ph="f_name_ph" placeholder="Your name"></label>
+      <div class="row2">
+        <label for="f-class"><span data-i18n="f_class">Class your child is joining</span>
+          <select id="f-class"></select></label>
+        <label for="f-day"><span data-i18n="f_day">Preferred day</span>
+          <input id="f-day" type="date"></label>
+      </div>
+      <label for="f-phone"><span data-i18n="f_phone">Your phone number (optional)</span>
+        <input id="f-phone" type="tel" autocomplete="tel" placeholder="+250 …"></label>
+      <button class="btn btn-primary" type="submit" data-i18n="f_make">Prepare my message</button>
+      <div class="out" id="out" hidden>
+        <p class="eyebrow" data-i18n="out_h">Your message</p>
+        <pre id="msg"></pre>
+        <div class="acts">
+          <button class="btn btn-ghost" type="button" id="copymsg" data-i18n="out_copy">Copy message</button>
+          <a class="btn btn-primary" id="wa" href="#" target="_blank" rel="noopener" data-i18n="out_wa">Open WhatsApp</a>
+        </div>
+        <small data-i18n="out_note">Nothing is sent from this page. WhatsApp opens in a new tab with the message ready for you to send.</small>
+      </div>
+    </form>
+  </div></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><div class="in">
+    <img src="img/emblem.png" alt="Green Country School emblem" width="76" height="70">
+    <div class="t"><b>Green Country School Ltd.</b><p data-i18n="foot_tag">We Deliver the difference · Nursery &amp; Primary · English and French programme</p><p>P.O. Box 4952 Kigali – Rwanda · Kicukiro – Gatenga · (+250) 788 502 206 / 0788 468 511</p></div>
+    <p>© 2026 Green Country School Ltd.</p>
+    <p class="own" data-i18n-html="own_p">This website is owned by <b>Intergalactic Writer Shop Ltd</b>, a publishing house based in Kigali. Ownership passes to Green Country School Ltd. once the school purchases the site.</p>
+  </div></div>
+</footer>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="x" type="button" aria-label="Close">×</button>
+  <img alt=""><p></p>
+</div>
+
+<script>
+(function(){
+  var T={
+    en:{
+      brand_sub:"Nursery & Primary · Gatenga", nav_prog:"Programmes", nav_class:"Classes", nav_campus:"Campus", nav_visit:"Visit us", cta_visit:"Plan a visit",
+      hero_eyebrow:"Nursery & Primary · Gatenga, Kicukiro, Kigali", h1_a:"We Deliver", h1_b:"the difference.",
+      hero_lead:"Green Country School runs an English and French programme on one campus in Gatenga. Our French section covers Maternelle to 2ème Primaire. Our English section covers Primary 3 to Primary 6.",
+      hero_cta2:"Find your child's class", chip_fr_k:"French section", chip_fr_v:"Maternelle – 2ème Primaire", chip_en_k:"English section", chip_en_v:"Primary 3 – Primary 6",
+      prog_eyebrow:"Programmes", prog_h2:"Two languages. One campus.", prog_p:"Both sections share one gate on the Gatenga road. The board at the entrance lists which classes belong to each.",
+      door_fr_name:"French section", door_fr_range:"Maternelle – 2ème Primaire", door_en_greet:"Hello!", door_en_name:"English section", door_en_range:"Primary 3 – Primary 6",
+      gate_p:"<b>As written on our gate.</b> French section: Maternelle to 2ème Primaire. English section: Primary 3 to Primary 6. Come and see it for yourself.",
+      class_eyebrow:"Your child's class", class_h2:"Find your child's class", class_p:"Select a class to see which section it belongs to. The track changes colour where the French section ends and the English section begins.", switch_tag:"FR → EN",
+      campus_eyebrow:"Campus", campus_h2:"A brick campus on the Gatenga road", campus_p:"Two-storey classroom blocks around a paved courtyard, behind a stone wall and a painted gate. Tap a photo to enlarge it.",
+      cap_gate:"The main gate with our welcome board", cap_road:"The roadside sign: nursery and primary section", cap_block:"The classroom block with upper-floor walkways", cap_court:"Entrance courtyard and stairs to the first floor", band_cap:"The courtyard and the Rwandan flag",
+      visit_eyebrow:"Visit us", visit_h2:"Come and see the school", visit_p:"Tell us which class your child is joining and when you would like to come. You can also call us directly.",
+      addr_h:"Address", phone_h:"Telephone", copy:"Copy", copied:"Copied", map_h:"Find us", maps:"Open in Google Maps", plus:"Plus code",
+      form_h:"Plan a visit", f_name:"Parent or guardian name", f_name_ph:"Your name", f_class:"Class your child is joining", f_day:"Preferred day", f_phone:"Your phone number (optional)", f_make:"Prepare my message",
+      notsure:"Not sure yet", out_h:"Your message", out_copy:"Copy message", out_wa:"Open WhatsApp", out_note:"Nothing is sent from this page. WhatsApp opens in a new tab with the message ready for you to send.",
+      foot_tag:"We Deliver the difference · Nursery & Primary · English and French programme",
+      sec_fr:"French section", sec_en:"English section", hello_fr:"Bonjour !", hello_en:"Hello!",
+      in_fr:"This class belongs to our French section.", in_en:"This class belongs to our English section.",
+      hint_p2:"The English section begins at Primary 3.", hint_p3:"Primary 3 is the first class of the English section.",
+      ask:"Ask about this class",
+      msg_hello:"Hello Green Country School, I would like to plan a visit.", msg_name:"Name", msg_class:"Child's class", msg_day:"Preferred day", msg_phone:"Phone",
+      nav_values:"Values", s_campus:"Our campus", s_illus:"Illustrative photo", alt_s1:"The classroom block and courtyard of Green Country School in Gatenga", alt_s2:"Four girls looking at a globe in a library", alt_s3:"A smiling boy at a computer in a classroom", prev_ph:"Previous photo", next_ph:"Next photo", pause_ph:"Pause slideshow", play_ph:"Play slideshow", lang_label:"Language: English. Switch to French",
+      nav_media:"Media", nav_biblio:"Bibliography",
+      wf_eyebrow:"Why we teach French", wf_h2:"French as a foreign language, to an official standard",
+      wf_p:"At Green Country School, French is taught as a foreign language (FLE). Our main value is a recognised level of French, measured by the official DELF and DALF diplomas.",
+      wf1_t:"French as a foreign language", wf1_p:"Pupils learn to understand, speak, read and write French step by step, with methods made for learners whose first language is not French.",
+      wf2_t:"One scale of levels", wf2_p:"Progress is described with the Common European Framework of Reference for Languages (CEFR), from A1 to C2.",
+      wf3_t:"Official diplomas", wf3_p:"DELF and DALF are the official diplomas of the French Ministry of National Education for non-native speakers of French, recognised worldwide. DELF Prim is designed for primary-school pupils.",
+      dalf_t:"DELF · DALF", dalf_p:"Official diplomas in French as a foreign language, from A1 to C2",
+      media_eyebrow:"Media", media_h2:"Films and documentaries made by our pupils", media_p:"Documentaries and media projects made by our pupils will be posted on our YouTube channel. Subscribe to see each new video.",
+      yt_btn:"Watch on YouTube", yt_soon:"Our YouTube channel link will be added here soon.", screen_cap:"New pupil videos will appear here",
+      bib_eyebrow:"Resources for parents", bib_h2:"Bibliography", bib_p:"Parents are invited to download books, exercises and learning resources for their child's class. The school will also share other books for writing, reading, science and more.",
+      th1:"Reading", th1d:"Books to read at home", th2:"Writing", th2d:"Writing practice and exercises", th3:"Science", th3d:"Science books and activities", th4:"Pupils' exercises", th4d:"Exercise sheets by class",
+      f_class_h:"Class", f_cat_h:"Type", all_cls:"All classes", all_cat:"All types", cat_ex:"Exercises", cat_bk:"Books", cat_wr:"Writing", cat_sc:"Science",
+      bib_empty_t:"Resources are being prepared", bib_empty_p:"No file is published yet. The school will add books and exercises here, class by class.", bib_none:"No resource is published for this choice yet. Try another class or type.", bib_ask:"Ask the school", bib_open:"Open or download", why_eyebrow:"Why two languages", why_h2:"Learning in English and in French",
+      w1_t:"Languages of Rwanda and the region", w1_p:"English and French are both official languages in Rwanda, and French is widely used in neighbouring countries.",
+      w2_t:"One campus for both sections", w2_p:"Both sections share the same gate and grounds in Gatenga, so a family with children in different classes goes to one place.",
+      w3_t:"More choice later on", w3_p:"Learning in English and in French gives children more choice for secondary school, university and work.",
+      val_eyebrow:"What we stand for", val_h2:"A school that exists to make a difference",
+      val_mission:"Green Country School exists to make a <mark>positive difference</mark> in every child's lifelong learning journey by developing in students a sense of <mark>responsibility</mark>, the value of <mark>honesty</mark>, <mark>respect</mark> for others and a <mark>desire to learn</mark>.",
+      v1:"Responsibility", v1d:"We develop a sense of responsibility in every student.", v2:"Respect", v2d:"We teach respect for others.", v3:"Honesty", v3d:"We teach the value of honesty.", v4:"Excellence", v4d:"We provide the children of Rwanda with a high quality of education.",
+      aims_h:"What we work towards", a1:"High quality education for Rwandan children", a2:"Patriotism", a3:"Justice and peace", a4:"Creativity", a5:"Competitiveness", a6:"Moral conscience",
+      amb_h:"Our ambition", amb:"Becoming one of the reference schools in Rwanda.", cap_sign:"Our mission and values",
+      campus_h2:"A campus built for learning", campus_p:"Real photos of our grounds in Gatenga. Tap a photo to enlarge it.",
+      ft1:"Two-storey brick classroom blocks with covered walkways", ft2:"A paved courtyard at the centre of the campus", ft3:"A walled campus with a gate on the Gatenga road", ft4:"Pupils in school uniform painted on the gate to welcome visitors", cap_wide:"The courtyard and the Rwandan flag",
+      nav_enrol:"Enrol", nav_careers:"Careers", menu:"Menu", cta_enrol:"Enrol now", hero_enrol:"Enrol your child",
+      play_eyebrow:"Kids' corner", play_h2:"Time to play!", play_p:"Hunt for hidden words and learn while you play.", play_btn:"Play Word Hunt", play_soon:"Word Hunt is coming soon. More games will arrive on this page.",
+      enrol_eyebrow:"Enrolment", enrol_h2:"Enrol your child at Green Country School", enrol_p:"Fill in the details. This page prepares a request that you send to the school on WhatsApp, or copy and send another way. You can also call the school on the numbers in the Visit us section.",
+      enrol_form_h:"Enrolment request", e_child:"Child's full name", e_child_ph:"First name and surname", e_class:"Class applying for", e_dob:"Child's date of birth", e_prev:"Previous school (optional)", e_parent:"Parent or guardian name", e_phone:"Phone number", e_make:"Prepare enrolment request",
+      e_note:"Only what you type here is used to write the message. Nothing is stored or sent from this page.", eout_h:"Your enrolment request", e_section:"Section", enrol_this:"Enrol in this class",
+      em_hello:"Hello Green Country School, I would like to enrol my child.", em_child:"Child", em_dob:"Date of birth", em_class:"Class applying for", em_prev:"Previous school", em_parent:"Parent or guardian", em_phone:"Phone",
+      car_eyebrow:"Careers", car_h2:"Build your career with us", car_p:"Green Country School teaches in French and in English. Teachers for both sections can introduce themselves here, and open positions are listed below.",
+      jobs_h:"Open positions", jobs_none:"No positions are published right now. You can still introduce yourself with the form.", job_apply:"Apply for this post", deadline:"apply before",
+      car_form_h:"Introduce yourself", c_name:"Full name", c_phone:"Phone number", c_email:"Email (optional)", c_area:"I would like to teach in", ar_fr:"French section (Maternelle – 2ème Primaire)", ar_en:"English section (Primary 3 – Primary 6)", ar_other:"Another role",
+      c_exp:"Qualifications and experience (short)", c_make:"Prepare my application message", c_note:"Send your CV together with this message. Nothing is stored or sent from this page.", cout_h:"Your application message",
+      cm_hello:"Hello Green Country School, I would like to apply for a teaching post.", cm_post:"Post", cm_name:"Name", cm_area:"Area", cm_exp:"Qualifications and experience", cm_phone:"Phone", cm_email:"Email",
+      own_p:"This website is owned by <b>Intergalactic Writer Shop Ltd</b>, a publishing house based in Kigali. Ownership passes to Green Country School Ltd. once the school purchases the site.",
+      qt1_t:"French section", qt1_d:"Maternelle – 2ème Primaire", qt2_t:"English section", qt2_d:"Primary 3 – Primary 6", qt3_t:"Enrolment", qt3_d:"Send an enrolment request for your child", qt4_t:"Careers", qt4_d:"Teach with us in French or in English",
+      qt_more:"Learn more →", qt_go:"Enrol now →", qt_go2:"See positions →",
+      life_eyebrow:"Life at school", life_h2:"Learning, curiosity and play", life_p:"A school where children learn together, read, discover and play.", life_note:"Illustrative photos.",
+      lc1:"Learning together", lc2:"Curiosity about the world", lc3:"A desire to learn", lc4:"Skills for tomorrow", lc5:"Play and teamwork",
+      alt_class:"Illustrative photo: a teacher and children around a globe", alt_write:"Illustrative photo: a girl writing in her notebook", alt_play:"Illustrative photo: children playing tug of war on the grass"
+    },
+    fr:{
+      brand_sub:"Maternelle et primaire · Gatenga", nav_prog:"Programmes", nav_class:"Classes", nav_campus:"Campus", nav_visit:"Nous rendre visite", cta_visit:"Planifier une visite",
+      hero_eyebrow:"Maternelle et primaire · Gatenga, Kicukiro, Kigali", h1_a:"Nous faisons", h1_b:"la différence.",
+      hero_lead:"Green Country School propose un programme anglais et français sur un même campus à Gatenga. Notre section française va de la Maternelle à la 2ème Primaire. Notre section anglaise va de la 3ème à la 6ème Primaire (Primary 3 à Primary 6).",
+      hero_cta2:"Trouver la classe de votre enfant", chip_fr_k:"Section française", chip_fr_v:"Maternelle – 2ème Primaire", chip_en_k:"Section anglaise", chip_en_v:"Primary 3 – Primary 6",
+      prog_eyebrow:"Programmes", prog_h2:"Deux langues. Un seul campus.", prog_p:"Les deux sections partagent le même portail sur la route de Gatenga. Le panneau à l'entrée indique les classes de chacune.",
+      door_fr_name:"Section française", door_fr_range:"Maternelle – 2ème Primaire", door_en_greet:"Hello!", door_en_name:"Section anglaise", door_en_range:"Primary 3 – Primary 6",
+      gate_p:"<b>Comme écrit sur notre portail.</b> Section française : de la Maternelle à la 2ème Primaire. Section anglaise : de Primary 3 à Primary 6. Venez le constater par vous-même.",
+      class_eyebrow:"La classe de votre enfant", class_h2:"Trouvez la classe de votre enfant", class_p:"Choisissez une classe pour voir à quelle section elle appartient. Le tracé change de couleur là où la section française s'arrête et où la section anglaise commence.", switch_tag:"FR → EN",
+      campus_eyebrow:"Campus", campus_h2:"Un campus en briques sur la route de Gatenga", campus_p:"Des bâtiments de classes à deux niveaux autour d'une cour pavée, derrière un mur en pierre et un portail peint. Touchez une photo pour l'agrandir.",
+      cap_gate:"Le portail principal et son panneau d'accueil", cap_road:"Le panneau en bordure de route : section maternelle et primaire", cap_block:"Le bâtiment de classes et ses coursives à l'étage", cap_court:"La cour d'entrée et l'escalier vers l'étage", band_cap:"La cour et le drapeau rwandais",
+      visit_eyebrow:"Nous rendre visite", visit_h2:"Venez voir l'école", visit_p:"Dites-nous dans quelle classe entre votre enfant et quand vous souhaitez venir. Vous pouvez aussi nous appeler directement.",
+      addr_h:"Adresse", phone_h:"Téléphone", copy:"Copier", copied:"Copié", map_h:"Nous trouver", maps:"Ouvrir dans Google Maps", plus:"Code Plus",
+      form_h:"Planifier une visite", f_name:"Nom du parent ou tuteur", f_name_ph:"Votre nom", f_class:"Classe de votre enfant", f_day:"Jour souhaité", f_phone:"Votre numéro de téléphone (facultatif)", f_make:"Préparer mon message",
+      notsure:"Pas encore décidé", out_h:"Votre message", out_copy:"Copier le message", out_wa:"Ouvrir WhatsApp", out_note:"Rien n'est envoyé depuis cette page. WhatsApp s'ouvre dans un nouvel onglet avec le message prêt à envoyer.",
+      foot_tag:"Nous faisons la différence · Maternelle et primaire · Programme anglais et français",
+      sec_fr:"Section française", sec_en:"Section anglaise", hello_fr:"Bonjour !", hello_en:"Hello!",
+      in_fr:"Cette classe fait partie de notre section française.", in_en:"Cette classe fait partie de notre section anglaise.",
+      hint_p2:"La section anglaise commence en Primary 3 (3ème Primaire).", hint_p3:"Primary 3 est la première classe de la section anglaise.",
+      ask:"Poser une question sur cette classe",
+      msg_hello:"Bonjour Green Country School, je souhaite planifier une visite.", msg_name:"Nom", msg_class:"Classe de l'enfant", msg_day:"Jour souhaité", msg_phone:"Téléphone",
+      nav_values:"Valeurs", s_campus:"Notre campus", s_illus:"Photo d'illustration", alt_s1:"Le bâtiment de classes et la cour de Green Country School à Gatenga", alt_s2:"Quatre filles regardant un globe dans une bibliothèque", alt_s3:"Un garçon souriant devant un ordinateur dans une salle de classe", prev_ph:"Photo précédente", next_ph:"Photo suivante", pause_ph:"Mettre le diaporama en pause", play_ph:"Reprendre le diaporama", lang_label:"Langue : français. Passer à l\'anglais",
+      nav_media:"Médias", nav_biblio:"Bibliographie",
+      wf_eyebrow:"Pourquoi nous enseignons le français", wf_h2:"Le français langue étrangère, selon un standard officiel",
+      wf_p:"À Green Country School, le français est enseigné comme langue étrangère (FLE). Notre valeur principale est un niveau de français reconnu, mesuré par les diplômes officiels DELF et DALF.",
+      wf1_t:"Le français langue étrangère", wf1_p:"Les élèves apprennent à comprendre, parler, lire et écrire le français pas à pas, avec des méthodes conçues pour les apprenants dont le français n\'est pas la langue première.",
+      wf2_t:"Une seule échelle de niveaux", wf2_p:"La progression est décrite avec le Cadre européen commun de référence pour les langues (CECRL), de A1 à C2.",
+      wf3_t:"Des diplômes officiels", wf3_p:"Le DELF et le DALF sont les diplômes officiels du ministère français de l\'Éducation nationale pour les non-francophones, reconnus dans le monde entier. Le DELF Prim est conçu pour les élèves du primaire.",
+      dalf_t:"DELF · DALF", dalf_p:"Diplômes officiels de français langue étrangère, de A1 à C2",
+      media_eyebrow:"Médias", media_h2:"Films et documentaires réalisés par nos élèves", media_p:"Les documentaires et projets médias réalisés par nos élèves seront publiés sur notre chaîne YouTube. Abonnez-vous pour voir chaque nouvelle vidéo.",
+      yt_btn:"Regarder sur YouTube", yt_soon:"Le lien de notre chaîne YouTube sera ajouté ici prochainement.", screen_cap:"Les nouvelles vidéos des élèves apparaîtront ici",
+      bib_eyebrow:"Ressources pour les parents", bib_h2:"Bibliographie", bib_p:"Les parents sont invités à télécharger les livres, exercices et ressources d\'apprentissage de la classe de leur enfant. L\'école partagera aussi d\'autres livres pour l\'écriture, la lecture, les sciences et plus encore.",
+      th1:"Lecture", th1d:"Des livres à lire à la maison", th2:"Écriture", th2d:"Entraînement et exercices d\'écriture", th3:"Sciences", th3d:"Livres et activités scientifiques", th4:"Exercices des élèves", th4d:"Fiches d\'exercices par classe",
+      f_class_h:"Classe", f_cat_h:"Type", all_cls:"Toutes les classes", all_cat:"Tous les types", cat_ex:"Exercices", cat_bk:"Livres", cat_wr:"Écriture", cat_sc:"Sciences",
+      bib_empty_t:"Les ressources sont en préparation", bib_empty_p:"Aucun fichier n\'est encore publié. L\'école ajoutera ici des livres et des exercices, classe par classe.", bib_none:"Aucune ressource n\'est encore publiée pour ce choix. Essayez une autre classe ou un autre type.", bib_ask:"Demander à l\'école", bib_open:"Ouvrir ou télécharger", why_eyebrow:"Pourquoi deux langues", why_h2:"Apprendre en anglais et en français",
+      w1_t:"Les langues du Rwanda et de la région", w1_p:"L'anglais et le français sont tous deux langues officielles du Rwanda, et le français est très utilisé dans les pays voisins.",
+      w2_t:"Un seul campus pour les deux sections", w2_p:"Les deux sections partagent le même portail et les mêmes bâtiments à Gatenga : une famille dont les enfants sont dans des classes différentes se rend à un seul endroit.",
+      w3_t:"Plus de choix plus tard", w3_p:"Apprendre en anglais et en français donne aux enfants plus de choix pour le secondaire, l'université et le travail.",
+      val_eyebrow:"Nos valeurs", val_h2:"Une école qui existe pour faire la différence",
+      val_mission:"Green Country School existe pour apporter une <mark>différence positive</mark> au parcours d'apprentissage de chaque enfant, en développant chez les élèves le sens des <mark>responsabilités</mark>, la valeur de l'<mark>honnêteté</mark>, le <mark>respect</mark> des autres et le <mark>désir d'apprendre</mark>.",
+      v1:"Responsabilité", v1d:"Nous développons le sens des responsabilités chez chaque élève.", v2:"Respect", v2d:"Nous enseignons le respect des autres.", v3:"Honnêteté", v3d:"Nous enseignons la valeur de l'honnêteté.", v4:"Excellence", v4d:"Nous offrons aux enfants du Rwanda une éducation de qualité.",
+      aims_h:"Nos objectifs", a1:"Une éducation de qualité pour les enfants rwandais", a2:"Patriotisme", a3:"Justice et paix", a4:"Créativité", a5:"Compétitivité", a6:"Conscience morale",
+      amb_h:"Notre ambition", amb:"Devenir l'une des écoles de référence du Rwanda.", cap_sign:"Notre mission et nos valeurs",
+      campus_h2:"Un campus pensé pour apprendre", campus_p:"De vraies photos de notre campus à Gatenga. Touchez une photo pour l'agrandir.",
+      ft1:"Des bâtiments de classes en briques à deux niveaux, avec coursives couvertes", ft2:"Une cour pavée au centre du campus", ft3:"Un campus clos, avec un portail sur la route de Gatenga", ft4:"Des élèves en uniforme peints sur le portail pour accueillir les visiteurs", cap_wide:"La cour et le drapeau rwandais",
+      nav_enrol:"Inscription", nav_careers:"Carrières", menu:"Menu", cta_enrol:"S'inscrire", hero_enrol:"Inscrire votre enfant",
+      play_eyebrow:"Coin des enfants", play_h2:"C'est l'heure de jouer !", play_p:"Cherche les mots cachés et apprends en jouant.", play_btn:"Jouer à la chasse aux mots", play_soon:"La chasse aux mots arrive bientôt. D'autres jeux seront ajoutés sur cette page.",
+      enrol_eyebrow:"Inscription", enrol_h2:"Inscrivez votre enfant à Green Country School", enrol_p:"Remplissez les informations. Cette page prépare une demande que vous envoyez à l'école sur WhatsApp, ou que vous copiez pour l'envoyer autrement. Vous pouvez aussi appeler l'école aux numéros de la section Nous rendre visite.",
+      enrol_form_h:"Demande d'inscription", e_child:"Nom complet de l'enfant", e_child_ph:"Prénom et nom", e_class:"Classe souhaitée", e_dob:"Date de naissance de l'enfant", e_prev:"École précédente (facultatif)", e_parent:"Nom du parent ou tuteur", e_phone:"Numéro de téléphone", e_make:"Préparer la demande d'inscription",
+      e_note:"Seul ce que vous écrivez ici sert à rédiger le message. Rien n'est enregistré ni envoyé depuis cette page.", eout_h:"Votre demande d'inscription", e_section:"Section", enrol_this:"Inscrire dans cette classe",
+      em_hello:"Bonjour Green Country School, je souhaite inscrire mon enfant.", em_child:"Enfant", em_dob:"Date de naissance", em_class:"Classe souhaitée", em_prev:"École précédente", em_parent:"Parent ou tuteur", em_phone:"Téléphone",
+      car_eyebrow:"Carrières", car_h2:"Construisez votre carrière avec nous", car_p:"Green Country School enseigne en français et en anglais. Les enseignants des deux sections peuvent se présenter ici, et les postes ouverts sont listés ci-dessous.",
+      jobs_h:"Postes ouverts", jobs_none:"Aucun poste n'est publié pour le moment. Vous pouvez quand même vous présenter avec le formulaire.", job_apply:"Postuler à ce poste", deadline:"candidature avant le",
+      car_form_h:"Présentez-vous", c_name:"Nom complet", c_phone:"Numéro de téléphone", c_email:"E-mail (facultatif)", c_area:"Je souhaite enseigner en", ar_fr:"Section française (Maternelle – 2ème Primaire)", ar_en:"Section anglaise (Primary 3 – Primary 6)", ar_other:"Autre fonction",
+      c_exp:"Diplômes et expérience (en bref)", c_make:"Préparer mon message de candidature", c_note:"Envoyez votre CV avec ce message. Rien n'est enregistré ni envoyé depuis cette page.", cout_h:"Votre message de candidature",
+      cm_hello:"Bonjour Green Country School, je souhaite postuler à un poste d'enseignant.", cm_post:"Poste", cm_name:"Nom", cm_area:"Section", cm_exp:"Diplômes et expérience", cm_phone:"Téléphone", cm_email:"E-mail",
+      own_p:"Ce site appartient à <b>Intergalactic Writer Shop Ltd</b>, une maison d'édition et de publication basée à Kigali. Il deviendra la propriété de Green Country School Ltd. dès l'achat du site par l'école.",
+      qt1_t:"Section française", qt1_d:"Maternelle – 2ème Primaire", qt2_t:"Section anglaise", qt2_d:"Primary 3 – Primary 6", qt3_t:"Inscription", qt3_d:"Envoyez une demande d'inscription pour votre enfant", qt4_t:"Carrières", qt4_d:"Enseignez avec nous en français ou en anglais",
+      qt_more:"En savoir plus →", qt_go:"S'inscrire →", qt_go2:"Voir les postes →",
+      life_eyebrow:"La vie à l'école", life_h2:"Apprendre, être curieux et jouer", life_p:"Une école où les enfants apprennent ensemble, lisent, découvrent et jouent.", life_note:"Photos d'illustration.",
+      lc1:"Apprendre ensemble", lc2:"La curiosité du monde", lc3:"Le désir d'apprendre", lc4:"Des compétences pour demain", lc5:"Jeu et esprit d'équipe",
+      alt_class:"Photo d'illustration : une enseignante et des enfants autour d'un globe", alt_write:"Photo d'illustration : une fillette écrit dans son cahier", alt_play:"Photo d'illustration : des enfants jouent au tir à la corde sur l'herbe"
+    }
+  };
+  var STOPS=[
+    {id:"mat",s:"fr",lab:{en:"Nursery",fr:"Mat."},full:{en:"Nursery (Maternelle)",fr:"Maternelle"}},
+    {id:"p1",s:"fr",lab:{en:"P1",fr:"1ère"},full:{en:"Primary 1 (1ère Primaire)",fr:"1ère Primaire (Primary 1)"}},
+    {id:"p2",s:"fr",lab:{en:"P2",fr:"2ème"},full:{en:"Primary 2 (2ème Primaire)",fr:"2ème Primaire (Primary 2)"}},
+    {id:"p3",s:"en",lab:{en:"P3",fr:"3ème"},full:{en:"Primary 3 (3ème Primaire)",fr:"3ème Primaire (Primary 3)"}},
+    {id:"p4",s:"en",lab:{en:"P4",fr:"4ème"},full:{en:"Primary 4 (4ème Primaire)",fr:"4ème Primaire (Primary 4)"}},
+    {id:"p5",s:"en",lab:{en:"P5",fr:"5ème"},full:{en:"Primary 5 (5ème Primaire)",fr:"5ème Primaire (Primary 5)"}},
+    {id:"p6",s:"en",lab:{en:"P6",fr:"6ème"},full:{en:"Primary 6 (6ème Primaire)",fr:"6ème Primaire (Primary 6)"}}
+  ];
+  var lang="en", sel=0;
+  try{var sv=localStorage.getItem("gcs-lang"); if(sv==="fr"||sv==="en") lang=sv;}catch(e){}
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  function t(k){return T[lang][k]}
+
+  function renderTrack(){
+    var tr=$("#track"); tr.innerHTML="";
+    STOPS.forEach(function(st,i){
+      var b=document.createElement("button"); b.type="button"; b.className="stop "+st.s; b.setAttribute("aria-pressed",String(i===sel));
+      b.innerHTML='<span class="dot">'+st.lab[lang].replace("Nursery","N")+'</span><span class="nm">'+st.lab[lang]+'</span>';
+      b.setAttribute("aria-label",st.full[lang]);
+      b.addEventListener("click",function(){sel=i;renderTrack();renderPanel();});
+      tr.appendChild(b);
+    });
+  }
+  function renderPanel(){
+    var st=STOPS[sel], p=$("#panel");
+    p.className="panel "+st.s;
+    var hint=st.id==="p2"?t("hint_p2"):(st.id==="p3"?t("hint_p3"):"");
+    p.innerHTML='<div><span class="tag">'+t("sec_"+st.s)+'</span><h3>'+st.full[lang]+'</h3><p>'+t("in_"+st.s)+'</p>'+(hint?'<p class="hint">'+hint+'</p>':'')+'</div>'+
+      '<div class="right"><div class="hello">'+t("hello_"+st.s)+'</div><div class="btns"><button type="button" class="btn btn-primary" id="enrolbtn">'+t("enrol_this")+'</button><button type="button" class="btn btn-ghost" id="askbtn">'+t("ask")+'</button></div></div>';
+    $("#enrolbtn").addEventListener("click",function(){$("#e-class").value=st.id;renderEnrolBadge();$("#enrol").scrollIntoView({behavior:"smooth"});});
+    $("#askbtn").addEventListener("click",function(){
+      $("#f-class").value=st.id; $("#visit").scrollIntoView({behavior:"smooth"}); setTimeout(function(){$("#f-name").focus({preventScroll:true});},500);
+    });
+  }
+  function renderSelect(){
+    var s=$("#f-class"), cur=s.value; s.innerHTML="";
+    STOPS.forEach(function(st){var o=document.createElement("option");o.value=st.id;o.textContent=st.full[lang];s.appendChild(o);});
+    var o=document.createElement("option");o.value="unsure";o.textContent=t("notsure");s.appendChild(o);
+    s.value=cur||"unsure";
+  }
+  function applyLang(){
+    document.documentElement.lang=lang;
+    $$("[data-i18n]").forEach(function(el){var v=t(el.getAttribute("data-i18n")); if(v!=null) el.textContent=v;});
+    $$("[data-i18n-html]").forEach(function(el){var v=t(el.getAttribute("data-i18n-html")); if(v!=null) el.innerHTML=v;});
+    $$("[data-i18n-ph]").forEach(function(el){el.placeholder=t(el.getAttribute("data-i18n-ph"));});
+    (function(b){b.setAttribute("data-l",lang);b.setAttribute("aria-label",t("lang_label"));b.title=t("lang_label");})($("#langbtn"));
+    $$("[data-i18n-aria]").forEach(function(el){el.setAttribute("aria-label",t(el.getAttribute("data-i18n-aria")));});
+    $$("[data-lb]").forEach(function(b){$("img",b).alt=t(b.getAttribute("data-cap"));});
+    $$("[data-alt]").forEach(function(im){im.alt=t(im.getAttribute("data-alt"));});
+    renderTrack(); renderPanel(); renderSelect(); renderExtra(); renderMedia(); renderBiblio();
+    if(!$("#out").hidden) buildMsg();
+    if(!$("#eout").hidden) buildEnrol();
+    if(!$("#cout").hidden) buildCareer();
+  }
+  $("#langbtn").addEventListener("click",function(){
+    lang=(lang==="en")?"fr":"en"; try{localStorage.setItem("gcs-lang",lang);}catch(e){} applyLang();
+  });
+
+  /* copy helper */
+  function copyText(text,node,btn,done){
+    function fallback(){try{var r=document.createRange();r.selectNodeContents(node);var s=getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}}
+    function ok(){var o=btn.textContent;btn.textContent=done;setTimeout(function(){btn.textContent=o;},1400);}
+    try{ navigator.clipboard.writeText(text).then(ok,fallback); }catch(e){ fallback(); }
+  }
+  $$("[data-copy]").forEach(function(b){b.addEventListener("click",function(){var n=document.getElementById(b.getAttribute("data-copy"));copyText(n.textContent,n,b,t("copied"));});});
+
+  /* visit form */
+  var day=$("#f-day"); try{var d=new Date();day.min=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}catch(e){}
+  function buildMsg(){
+    var st=STOPS.filter(function(x){return x.id===$("#f-class").value})[0];
+    var lines=[t("msg_hello")], n=$("#f-name").value.trim(), ph=$("#f-phone").value.trim(), dv=$("#f-day").value;
+    if(n) lines.push(t("msg_name")+": "+n);
+    lines.push(t("msg_class")+": "+(st?st.full[lang]:t("notsure")));
+    if(dv){var ds=new Date(dv+"T12:00:00").toLocaleDateString(lang==="fr"?"fr-FR":"en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});lines.push(t("msg_day")+": "+ds);}
+    if(ph) lines.push(t("msg_phone")+": "+ph);
+    var m=lines.join("\n"); $("#msg").textContent=m;
+    $("#wa").href="https://wa.me/250788502206?text="+encodeURIComponent(m);
+    $("#out").hidden=false;
+  }
+  $("#vform").addEventListener("submit",function(e){e.preventDefault();buildMsg();$("#out").scrollIntoView({behavior:"smooth",block:"nearest"});});
+  $("#copymsg").addEventListener("click",function(){copyText($("#msg").textContent,$("#msg"),$("#copymsg"),t("copied"));});
+
+  /* lightbox */
+  var lb=$("#lb");
+  function closeLb(){lb.hidden=true;}
+  $$("[data-lb]").forEach(function(b){b.addEventListener("click",function(){
+    var im=$("img",lb); im.src=b.getAttribute("data-lb"); im.alt=t(b.getAttribute("data-cap")); $("p",lb).textContent=t(b.getAttribute("data-cap")); lb.hidden=false; $(".x",lb).focus();
+  });});
+  lb.addEventListener("click",function(e){if(e.target!==$("img",lb)) closeLb();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!lb.hidden) closeLb();});
+
+  /* kids corner, enrolment, careers, menu */
+  var JOBS=[]; /* add posts like: {title:{en:"Class teacher",fr:"Enseignant titulaire"},section:"en",type:{en:"Full time",fr:"Temps plein"},deadline:"2026-12-01"} */
+  var chosenJob=null;
+  function fmtDate(v){try{return new Date(v+"T12:00:00").toLocaleDateString(lang==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"long",year:"numeric"});}catch(e){return v;}}
+  function showOut(p,m){$("#"+p+"msg").textContent=m;$("#"+p+"wa").href="https://wa.me/250788502206?text="+encodeURIComponent(m);$("#"+p+"out").hidden=false;}
+  function stopById(id){return STOPS.filter(function(x){return x.id===id})[0]||STOPS[0];}
+  function renderEnrolBadge(){
+    var st=stopById($("#e-class").value), b=$("#e-sec");
+    b.className="secbadge "+st.s;
+    b.innerHTML='<p class="eyebrow">'+t("e_section")+'</p><p class="greet">'+t("hello_"+st.s)+'</p><p class="nm">'+t("sec_"+st.s)+'</p><p>'+t("in_"+st.s)+'</p>';
+  }
+  function renderJobs(){
+    var box=$("#jobs"); box.innerHTML="";
+    if(!JOBS.length){var p=document.createElement("p");p.className="nojobs";p.textContent=t("jobs_none");box.appendChild(p);return;}
+    JOBS.forEach(function(j){
+      var a=document.createElement("article"); a.className="job "+j.section;
+      var dl=j.deadline?(" · "+t("deadline")+" "+fmtDate(j.deadline)):"";
+      a.innerHTML='<div><span class="tag">'+t("sec_"+j.section)+'</span><h4>'+j.title[lang]+'</h4><p>'+j.type[lang]+dl+'</p></div>';
+      var b=document.createElement("button"); b.type="button"; b.className="btn btn-ghost"; b.textContent=t("job_apply");
+      b.addEventListener("click",function(){chosenJob=j;$("#c-area").value=j.section;$("#cform").scrollIntoView({behavior:"smooth"});setTimeout(function(){$("#c-name").focus({preventScroll:true});},500);});
+      a.appendChild(b); box.appendChild(a);
+    });
+  }
+  function renderExtra(){
+    var e=$("#e-class"), ec=e.value||"mat"; e.innerHTML="";
+    STOPS.forEach(function(st){var o=document.createElement("option");o.value=st.id;o.textContent=st.full[lang];e.appendChild(o);});
+    e.value=ec;
+    var a=$("#c-area"), ac=a.value||"fr"; a.innerHTML="";
+    [["fr",t("ar_fr")],["en",t("ar_en")],["other",t("ar_other")]].forEach(function(x){var o=document.createElement("option");o.value=x[0];o.textContent=x[1];a.appendChild(o);});
+    a.value=ac;
+    renderEnrolBadge(); renderJobs();
+  }
+  function buildEnrol(){
+    var st=stopById($("#e-class").value), L=[t("em_hello")];
+    var c=$("#e-child").value.trim(), dob=$("#e-dob").value, pv=$("#e-prev").value.trim(), pa=$("#e-parent").value.trim(), ph=$("#e-phone").value.trim();
+    if(c) L.push(t("em_child")+": "+c);
+    if(dob) L.push(t("em_dob")+": "+fmtDate(dob));
+    L.push(t("em_class")+": "+st.full[lang]+" ("+t("sec_"+st.s)+")");
+    if(pv) L.push(t("em_prev")+": "+pv);
+    if(pa) L.push(t("em_parent")+": "+pa);
+    if(ph) L.push(t("em_phone")+": "+ph);
+    showOut("e",L.join("\n"));
+  }
+  function buildCareer(){
+    var L=[t("cm_hello")], n=$("#c-name").value.trim(), ph=$("#c-phone").value.trim(), em=$("#c-email").value.trim(), ex=$("#c-exp").value.trim();
+    var ar={fr:t("ar_fr"),en:t("ar_en"),other:t("ar_other")}[$("#c-area").value];
+    if(chosenJob) L.push(t("cm_post")+": "+chosenJob.title[lang]);
+    if(n) L.push(t("cm_name")+": "+n);
+    L.push(t("cm_area")+": "+ar);
+    if(ex) L.push(t("cm_exp")+": "+ex);
+    if(ph) L.push(t("cm_phone")+": "+ph);
+    if(em) L.push(t("cm_email")+": "+em);
+    showOut("c",L.join("\n"));
+  }
+  function guard(input){if(!input.value.trim()){input.setAttribute("aria-invalid","true");input.focus();return false;}input.removeAttribute("aria-invalid");return true;}
+  $("#e-class").addEventListener("change",renderEnrolBadge);
+  $("#eform").addEventListener("submit",function(e){e.preventDefault();if(!guard($("#e-child")))return;buildEnrol();$("#eout").scrollIntoView({behavior:"smooth",block:"nearest"});});
+  $("#cform").addEventListener("submit",function(e){e.preventDefault();if(!guard($("#c-name")))return;buildCareer();$("#cout").scrollIntoView({behavior:"smooth",block:"nearest"});});
+  $("#ecopy").addEventListener("click",function(){copyText($("#emsg").textContent,$("#emsg"),$("#ecopy"),t("copied"));});
+  $("#ccopy").addEventListener("click",function(){copyText($("#cmsg").textContent,$("#cmsg"),$("#ccopy"),t("copied"));});
+  try{var td=new Date();$("#e-dob").max=td.getFullYear()+"-"+String(td.getMonth()+1).padStart(2,"0")+"-"+String(td.getDate()).padStart(2,"0");}catch(e){}
+
+  /* word hunt teaser */
+  (function(){
+    var g=$("#wgrid"), fill="TAMPOBIGKUNDEFLHYVJWQXZ", cells=[], i;
+    for(i=0;i<42;i++) cells.push({c:fill.charAt((i*5+3)%fill.length),h:false});
+    function put(word,row,col){for(var k=0;k<word.length;k++){var x=row*7+col+k;cells[x].c=word.charAt(k);cells[x].h=true;}}
+    put("SCHOOL",0,0); put("LEARN",2,2); put("RESPECT",4,0);
+    cells.forEach(function(x){var s=document.createElement("span");s.textContent=x.c;if(x.h)s.className="hit";g.appendChild(s);});
+    $("#playbtn").addEventListener("click",function(){$("#soon").hidden=false;});
+  })();
+
+  /* menu */
+  var mb=$("#menubtn"), mn=$("#mainnav");
+  mb.addEventListener("click",function(){var o=mn.classList.toggle("open");mb.setAttribute("aria-expanded",String(o));});
+  $$("a",mn).forEach(function(a){a.addEventListener("click",function(){mn.classList.remove("open");mb.setAttribute("aria-expanded","false");});});
+
+  /* media + bibliography */
+  var YT_URL=""; /* put the school's YouTube channel link between the quotes */
+  var RESOURCES=[]; /* add files like: {cls:"p3",cat:"exercises",title:{en:"Maths sheet 1",fr:"Fiche de maths 1"},desc:{en:"…",fr:"…"},fmt:"PDF",url:"https://…"}  (cls: a class id or "all"; cat: exercises, books, writing or science) */
+  var bClass="all", bCat="all";
+  var CATS=[["all","all_cat"],["exercises","cat_ex"],["books","cat_bk"],["writing","cat_wr"],["science","cat_sc"]];
+  function renderMedia(){
+    var a=$("#ytlink"), note=$("#ytnote");
+    if(YT_URL){a.href=YT_URL;a.removeAttribute("aria-disabled");a.classList.remove("off");note.hidden=true;}
+    else{a.removeAttribute("href");a.setAttribute("aria-disabled","true");a.classList.add("off");note.hidden=false;}
+  }
+  function chip(box,label,on,fn){var b=document.createElement("button");b.type="button";b.className="fchip";b.textContent=label;b.setAttribute("aria-pressed",String(on));b.addEventListener("click",fn);box.appendChild(b);}
+  function renderBiblio(){
+    var fc=$("#bf-class"), fk=$("#bf-cat"), box=$("#blist"); fc.innerHTML=""; fk.innerHTML=""; box.innerHTML="";
+    chip(fc,t("all_cls"),bClass==="all",function(){bClass="all";renderBiblio();});
+    STOPS.forEach(function(st){chip(fc,st.lab[lang],bClass===st.id,function(){bClass=st.id;renderBiblio();});});
+    CATS.forEach(function(c){chip(fk,t(c[1]),bCat===c[0],function(){bCat=c[0];renderBiblio();});});
+    var list=RESOURCES.filter(function(r){return (bClass==="all"||r.cls==="all"||r.cls===bClass)&&(bCat==="all"||r.cat===bCat);});
+    if(!list.length){
+      var d=document.createElement("div"); d.className="bempty";
+      d.innerHTML='<b>'+t("bib_empty_t")+'</b><p>'+t(RESOURCES.length?"bib_none":"bib_empty_p")+'</p><a class="btn btn-ghost" href="#visit">'+t("bib_ask")+'</a>';
+      box.appendChild(d); return;
+    }
+    list.forEach(function(r){
+      var a=document.createElement("article"); a.className="bcard";
+      var cl=CATS.filter(function(c){return c[0]===r.cat;})[0];
+      a.innerHTML='<span class="tag">'+(cl?t(cl[1]):"")+(r.fmt?" · "+r.fmt:"")+'</span><h4></h4><p></p>';
+      $("h4",a).textContent=r.title[lang]; $("p",a).textContent=(r.desc&&r.desc[lang])||"";
+      var l=document.createElement("a"); l.className="btn btn-primary"; l.href=r.url; l.target="_blank"; l.rel="noopener"; l.textContent=t("bib_open"); a.appendChild(l);
+      box.appendChild(a);
+    });
+  }
+
+  /* hero slideshow */
+  (function(){
+    var slides=$$("#slides .slide"), box=$("#dots"), cur=0, timer=null, playing=true, busy=false, hover=false, reduce=false;
+    try{reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+    slides.forEach(function(sl,i){
+      sl.setAttribute("aria-label",(i+1)+" / "+slides.length);
+      var d=document.createElement("button"); d.type="button"; d.className="dot"; d.setAttribute("aria-label",(i+1)+" / "+slides.length);
+      d.addEventListener("click",function(){go(i,true);}); box.appendChild(d);
+    });
+    function mark(){$$(".dot",box).forEach(function(d,i){if(i===cur)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current");});}
+    function go(n,user){
+      n=(n+slides.length)%slides.length; if(n===cur||busy) return;
+      var old=slides[cur], nx=slides[n]; busy=true;
+      old.classList.remove("on"); old.classList.add("prev");
+      void nx.offsetWidth; nx.classList.add("on"); cur=n; mark();
+      setTimeout(function(){old.classList.remove("prev");busy=false;},reduce?0:1000);
+      if(user) restart();
+    }
+    function stop(){clearInterval(timer);timer=null;}
+    function restart(){stop(); if(playing&&!hover&&!reduce&&!document.hidden) timer=setInterval(function(){go(cur+1);},5500);}
+    function sync(){var b=$("#spause"),k=playing?"pause_ph":"play_ph"; b.classList.toggle("paused",!playing); b.setAttribute("data-i18n-aria",k); b.setAttribute("aria-label",t(k));}
+    $("#snext").addEventListener("click",function(){go(cur+1,true);});
+    $("#sprev").addEventListener("click",function(){go(cur-1,true);});
+    $("#spause").addEventListener("click",function(){playing=!playing;sync();restart();});
+    var h=$(".hero");
+    h.addEventListener("mouseenter",function(){hover=true;stop();});
+    h.addEventListener("mouseleave",function(){hover=false;restart();});
+    document.addEventListener("visibilitychange",restart);
+    if(reduce) playing=false;
+    mark(); sync(); restart();
+  })();
+
+  applyLang();
+})();
+</script>
